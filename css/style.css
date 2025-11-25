@@ -1,0 +1,142 @@
+@charset "UTF-8";
+/* --- RESET --- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+body body {
+  font-family: "Inter", sans-serif;
+}
+
+.cards {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+  /* Mobile-first: 1 columna */
+  grid-template-columns: 1fr;
+}
+
+.card {
+  background: #fcfcfc;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px black solid;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  font-weight: 600;
+}
+.card .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* === PRODUCTOS === */
+.products-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.product-card {
+  background: #fff;
+  padding: 1.3rem;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.product-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.product-price {
+  margin: 0;
+  color: #333;
+  font-weight: 500;
+}
+
+/* === CONTROLES === */
+.product-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.qty-btn {
+  background: #eee;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.qty-btn:hover {
+  background: #ddd;
+}
+
+.qty-display {
+  font-weight: 600;
+  padding: 0 6px;
+}
+
+.add-btn {
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.add-btn:hover {
+  background: #000;
+}
+
+/* --- Diseño responsives --- */
+@media (min-width: 600px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* --- Desktop --- */
+@media (min-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
