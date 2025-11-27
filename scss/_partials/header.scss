@@ -1,0 +1,16 @@
+@use "../_variables.scss" as *;
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    padding: 2%;
+    background-color: #111827;
+    color: $blanco;
+    list-style: none;
+    text-decoration: none;
+}
