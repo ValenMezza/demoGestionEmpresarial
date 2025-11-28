@@ -1,4 +1,18 @@
 @charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  padding: 2%;
+  background-color: #111827;
+  color: #ffffff;
+  list-style: none;
+  text-decoration: none;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                  RESET                                     */
 /* -------------------------------------------------------------------------- */
@@ -15,6 +29,9 @@ body {
 
 /* -------------------------------------------------------------------------- */
 /*                                MENÚ (CARDS)                                */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                          ALQUILERES (TABLA DARK)                          */
 /* -------------------------------------------------------------------------- */
 .cards {
   display: grid;
@@ -66,9 +83,27 @@ body {
   box-shadow: 0 8px 18px rgba(37, 99, 235, 0.6);
 }
 
-/* -------------------------------------------------------------------------- */
-/*                           PRODUCTOS (VENTAS)                               */
-/* -------------------------------------------------------------------------- */
+@media (min-width: 600px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
 #ventas-home {
   display: flex;
   flex-direction: row;
@@ -157,9 +192,21 @@ aside {
   background: #000;
 }
 
-/* -------------------------------------------------------------------------- */
-/*                          ALQUILERES (TABLA DARK)                          */
-/* -------------------------------------------------------------------------- */
+@media (min-width: 600px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 900px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
 #alquiler-home {
   width: 100%;
   display: flex;
@@ -298,44 +345,6 @@ aside {
 .btn-accion.eliminar:hover {
   background: #dc2626;
   color: white;
-}
-
-/* -------------------------------------------------------------------------- */
-/*                        RESPONSIVE LAYOUT GLOBAL                            */
-/* -------------------------------------------------------------------------- */
-@media (min-width: 600px) {
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .products-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (min-width: 900px) {
-  .cards {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .products-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-@media (min-width: 1200px) {
-  .products-grid {
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-header {
-  padding: 2%;
-  background-color: #111827;
-  color: #ffffff;
-  list-style: none;
-  text-decoration: none;
 }
 
 /*# sourceMappingURL=style.css.map */

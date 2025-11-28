@@ -1,0 +1,73 @@
+.cards {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+.card {
+  background: #0b1120;
+  padding: 1.5rem;
+  border-radius: 18px;
+  border: 1px solid #1f2937;
+  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.65);
+  text-align: center;
+  font-weight: 600;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  background: #111827;
+  border-color: #2563eb;
+  box-shadow: 0 22px 50px rgba(37, 99, 235, 0.35);
+}
+.card h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.2rem;
+  color: #e5e7eb;
+}
+.card a {
+  text-decoration: none;
+}
+.card .btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid rgb(18.5714285714, 76.1428571429, 202.4285714286);
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.45);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+.card .btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.6);
+}
+
+@media (min-width: 600px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/*# sourceMappingURL=main-home.css.map */
