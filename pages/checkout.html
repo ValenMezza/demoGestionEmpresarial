@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <title>Finalizar compra</title>
+</head>
+
+<body>
+    <main class="checkout">
+  <!-- Paso 1: Datos del cliente -->
+  <section class="checkout__content">
+    <h1 class="checkout__title">Finalizar compra #12</h1>
+    <p class="checkout__subtitle">Completá tus datos para procesar el pedido.</p>
+
+    <!-- Datos de contacto -->
+    <section class="checkout__section">
+      <h2 class="checkout__section-title">Datos de cliente</h2>
+<div class="input-group">
+  <label for="dniFormClient">DNI</label>
+  <div>
+    <input type="number" id="dniFormClient" placeholder="XX.XXX.XXX">
+    <button class="btn-inline">Buscar</button>
+  </div>
+</div>
+
+
+
+      <div class="checkout__grid">
+        <div class="field">
+          <label for="nombre">Nombre y apellido</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Valentino Mezza">
+        </div>
+
+
+        <div class="field">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="+54 9 351 000 0000">
+        </div>
+      </div>
+    </section>
+
+    <!-- Dirección de entrega -->
+    <section class="checkout__section">
+      <h2 class="checkout__section-title">Dirección de entrega</h2>
+        
+
+      <div class="checkout__grid">
+        <div class="field">
+          <label for="direccion">Calle y número</label>
+          <input type="text" id="direccion" name="direccion" placeholder="Av. Ejemplo 1234">
+        </div>
+
+        <div class="field">
+          <label for="ciudad">Ciudad</label>
+          <input type="text" id="ciudad" name="ciudad" placeholder="Córdoba">
+        </div>
+
+        <div class="field">
+          <label for="provincia">Provincia</label>
+          <input type="text" id="provincia" name="provincia" placeholder="Córdoba">
+        </div>
+
+        <div class="field">
+          <label for="cp">Código postal</label>
+          <input type="text" id="cp" name="cp" placeholder="5000">
+        </div>
+      </div>
+    </section>
+
+    <!-- Método de pago -->
+    <section class="checkout__section">
+      <h2 class="checkout__section-title">Método de pago</h2>
+
+      <div class="payment-options">
+        <label class="payment-option">
+          <input type="radio" name="metodo_pago" value="tarjeta" checked>
+          <span>Tarjeta de crédito / débito</span>
+        </label>
+
+        <label class="payment-option">
+          <input type="radio" name="metodo_pago" value="transferencia">
+          <span>Transferencia bancaria</span>
+        </label>
+
+        <label class="payment-option">
+          <input type="radio" name="metodo_pago" value="efectivo">
+          <span>Efectivo al recibir</span>
+        </label>
+      </div>
+
+      <!-- Datos de tarjeta (opcional, a nivel diseño) -->
+      <div class="checkout__grid checkout__grid--card">
+        <div class="field">
+          <label for="numero-tarjeta">Número de tarjeta</label>
+          <input type="text" id="numero-tarjeta" name="numero_tarjeta" placeholder="XXXX XXXX XXXX XXXX">
+        </div>
+        <div class="field">
+          <label for="vencimiento">Vencimiento</label>
+          <input type="text" id="vencimiento" name="vencimiento" placeholder="MM/AA">
+        </div>
+        <div class="field">
+          <label for="cvv">CVV</label>
+          <input type="password" id="cvv" name="cvv" placeholder="•••">
+        </div>
+      </div>
+    </section>
+
+    <!-- Botón confirmar -->
+    <div class="checkout__actions">
+      <button class="checkout__btn-confirm" type="submit">
+        Confirmar compra
+      </button>
+      <a href="./home.html" class="checkout__btn-secondary">Cancelar compra</a>
+    </div>
+  </section>
+
+  <!-- Resumen del pedido -->
+  <aside class="checkout-summary">
+    <h2 class="checkout-summary__title">Resumen del pedido</h2>
+
+    <div class="checkout-summary__items">
+      <!-- Acá podrías renderizar desde backend -->
+      <div class="summary-item">
+        <div>
+          <p class="summary-item__name">Tierra</p>
+          <p class="summary-item__meta">x2</p>
+        </div>
+        <p class="summary-item__price">$19.700</p>
+      </div>
+
+      <div class="summary-item">
+        <div>
+          <p class="summary-item__name">Arena</p>
+          <p class="summary-item__meta">x1</p>
+        </div>
+        <p class="summary-item__price">$8.500</p>
+      </div>
+    </div>
+
+    <div class="checkout-summary__line">
+      <span>Subtotal</span>
+      <span>$28.200</span>
+    </div>
+    <div class="checkout-summary__line">
+      <span>Envío</span>
+      <span>$2.000</span>
+    </div>
+
+    <div class="checkout-summary__total">
+      <span>Total</span>
+      <span>$30.200</span>
+    </div>
+
+
+  </aside>
+</main>
+
+</body>
+
+</html>

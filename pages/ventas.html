@@ -14,24 +14,25 @@
 <body>
     <header>
         <nav>
-            <ul><li><a href="./home.html">home</a></li></ul>
+            <ul>
+                <li><a href="./home.html">home</a></li>
+            </ul>
         </nav>
     </header>
     <h1>Nueva venta</h1>
     <main id="ventas-home">
-        <section class="products-grid">
+        <section class="ventas-section">
 
             <div class="product-card">
                 <h3 class="product-title">Tierra</h3>
                 <p class="product-price">$9.850</p>
 
                 <div class="product-actions">
-                    <button class="qty-btn">−</button>
+                    <button class="qty-btn-menos">-</button>
                     <span class="qty-display">1</span>
-                    <button class="qty-btn">+</button>
+                    <button class="qty-btn-mas">+</button>
                 </div>
-
-                <button class="add-btn">Agregar:<p id="nro-add">1</p></button>
+                <button class="btn">Agregar</button>
             </div>
 
             <div class="product-card">
@@ -39,25 +40,25 @@
                 <p class="product-price">$8.500</p>
 
                 <div class="product-actions">
-                    <button class="qty-btn">-</button>
+                    <button class="qty-btn-menos">-</button>
                     <span class="qty-display">1</span>
-                    <button class="qty-btn">+</button>
+                    <button class="qty-btn-mas">+</button>
                 </div>
 
-                <button class="add-btn">Agregar : <p id="nro-add">1</p></button>
+                <button class="btn">Agregar</button>
             </div>
 
             <div class="product-card">
-                <h3 class="product-title">Compost</h3>
+                <h3 class="product-title">Arena zarandeada</h3>
                 <p class="product-price">$12.300</p>
 
                 <div class="product-actions">
-                    <button class="qty-btn">−</button>
+                    <button class="qty-btn-menos">-</button>
                     <span class="qty-display">1</span>
-                    <button class="qty-btn">+</button>
+                    <button class="qty-btn-mas">+</button>
                 </div>
 
-                <button class="add-btn">Agregar : <p id="nro-add">1</p></button>
+                <button class="btn">Agregar</button>
             </div>
 
             <div class="product-card">
@@ -65,28 +66,49 @@
                 <p class="product-price">$6.900</p>
 
                 <div class="product-actions">
-                    <button class="qty-btn">−</button>
+                    <button class="qty-btn-menos">-</button>
                     <span class="qty-display">1</span>
-                    <button class="qty-btn">+</button>
+                    <button class="qty-btn-mas">+</button>
                 </div>
-                <button class="add-btn">Agregar : <p id="nro-add">1</p></button>
+                <button class="btn">Agregar</button>
             </div>
 
 
             <div class="product-card">
-                <h3 class="product-title">Humus</h3>
+                <h3 class="product-title">Granza</h3>
                 <p class="product-price">$11.750</p>
                 <div class="product-actions">
-                    <button class="qty-btn">−</button>
+                    <button class="qty-btn-menos">-</button>
                     <span class="qty-display">1</span>
-                    <button class="qty-btn">+</button>
+                    <button class="qty-btn-mas">+</button>
                 </div>
 
-                <button class="add-btn">Agregar : <p id="nro-add">1</p></button>
+                <button class="btn">Agregar</button>
             </div>
         </section>
-        <aside id="carrito-aside">
-            <h2>Carrito</h2>
+        <aside class="cart">
+            <h2 class="cart__title">Carrito</h2>
+
+            <div class="cart__items">
+                <!-- Ejemplo de item -->
+                <div class="cart-item">
+                    <div>
+                        <p class="cart-item__name">Producto ejemplo</p>
+                        <p class="cart-item__price">$9.850</p>
+                    </div>
+
+                    <div class="cart-item__controls">
+                        <button class="qty-btn">−</button>
+                        <span class="qty-display">1</span>
+                        <button class="qty-btn">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart__footer">
+                <p class="cart__total">Total: <span>$0</span></p>
+                <a href="./checkout.html" target="_blank" class="cart__checkout">Finalizar compra</a>
+            </div>
         </aside>
     </main>
 </body>

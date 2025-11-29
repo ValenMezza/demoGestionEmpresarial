@@ -1,0 +1,329 @@
+@charset "UTF-8";
+/* --- LAYOUT PRINCIPAL CHECKOUT --- */
+/* Quitar flechas en Chrome, Edge, Safari */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Quitar flechas en Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.checkout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: #020617;
+  color: #e5e7eb;
+  min-height: 100vh;
+}
+
+/* Columna izquierda */
+.checkout__content {
+  background: #020617;
+  border-radius: 16px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.checkout__title {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.checkout__subtitle {
+  margin: 0.25rem 0 0.5rem;
+  color: #9ca3af;
+  font-size: 0.95rem;
+}
+
+/* Secciones internas */
+.checkout__section {
+  background: #0b1120;
+  border-radius: 14px;
+  padding: 1rem 1.1rem 1.2rem;
+  border: 1px solid #1f2937;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.35);
+}
+
+.checkout__section-title {
+  margin: 0 0 0.8rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Grilla de campos */
+.checkout__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.8rem 1rem;
+}
+
+/* En desktop: 2 columnas */
+@media (min-width: 768px) {
+  .checkout__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .checkout__grid--card {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+}
+/* Campos de formulario */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.field label {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.field input {
+  padding: 0.6rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid #374151;
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.field input::placeholder {
+  color: #6b7280;
+}
+.field input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.4);
+  background: #020617;
+}
+
+/* Input con botón (DNI) – versión simple */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.input-group > div {
+  position: relative;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  padding-right: 80px; /* espacio para el botón */
+  border-radius: 10px;
+  border: 1px solid #374151;
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.input-group input::placeholder {
+  color: #6b7280;
+}
+.input-group input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.4);
+  background: #020617;
+}
+
+.btn-inline {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.45rem 0.7rem;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.btn-inline:hover {
+  background: #1d4ed8;
+}
+
+/* Opciones de pago */
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.7rem;
+  border-radius: 10px;
+  border: 1px solid #1f2937;
+  background: #020617;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.payment-option input[type=radio] {
+  accent-color: #2563eb;
+}
+.payment-option:hover {
+  border-color: #2563eb;
+  background: #020617;
+}
+
+/* Acciones (botones) */
+.checkout__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.checkout__btn-confirm {
+  border: none;
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #f9fafb;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  box-shadow: 0 15px 45px rgba(37, 99, 235, 0.55);
+}
+.checkout__btn-confirm:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+  box-shadow: 0 20px 50px rgba(37, 99, 235, 0.7);
+}
+.checkout__btn-confirm:active {
+  transform: translateY(0);
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.7);
+}
+
+.checkout__btn-secondary {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: 1px solid #374151;
+  color: #e5e7eb;
+  text-decoration: none;
+  background: #020617;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.checkout__btn-secondary:hover {
+  background: #111827;
+  border-color: #4b5563;
+}
+
+/* --- ASIDE RESUMEN --- */
+.checkout-summary {
+  background: #020617;
+  border-radius: 16px;
+  padding: 1.25rem;
+  border: 1px solid #1f2937;
+  box-shadow: 0 18px 55px rgba(15, 23, 42, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.checkout-summary__title {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+/* Items */
+.checkout-summary__items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  border-top: 1px solid #1f2937;
+  border-bottom: 1px solid #1f2937;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summary-item__name {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.summary-item__meta {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.summary-item__price {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Líneas de subtotal/envío */
+.checkout-summary__line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: #e5e7eb;
+}
+
+.checkout-summary__total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 0.25rem;
+}
+
+.checkout-summary__note {
+  margin: 0.5rem 0 0;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+/* --- LAYOUT DESKTOP: 2 columnas --- */
+@media (min-width: 900px) {
+  .checkout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .checkout__content {
+    flex: 2;
+  }
+  .checkout-summary {
+    flex: 1;
+    position: sticky;
+    top: 1.5rem;
+  }
+}
+
+/*# sourceMappingURL=main-checkout.css.map */
