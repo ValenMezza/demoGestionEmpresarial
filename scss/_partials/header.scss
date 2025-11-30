@@ -1,16 +1,41 @@
 @use "../_variables.scss" as *;
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header{
-    padding: 2%;
-    background-color: #111827;
-    color: $blanco;
+header {
+  padding: 2%;
+  background-color: $bg-card;
+  color: $blanco;
+  list-style: none;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.3);
+
+  & nav ul {
+    display: flex;
+    gap: 1.5rem;
     list-style: none;
+
+    & li {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  & nav ul li a {
+    color: $blanco;
     text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  & nav ul li a:hover {
+    color: $primary-soft;
+  }
 }

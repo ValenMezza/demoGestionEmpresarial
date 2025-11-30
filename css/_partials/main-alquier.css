@@ -13,7 +13,7 @@
   align-items: center;
   margin-bottom: 1rem;
 }
-#divHeader-alquiler button {
+#divHeader-alquiler #btnNuevoAlquiler {
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 8px;

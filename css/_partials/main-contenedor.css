@@ -1,7 +1,3 @@
-header {
-  background-color: red;
-}
-
 .estado-pill {
   display: inline-block;
   padding: 0.25rem 0.5rem;
@@ -18,6 +14,53 @@ header {
 .estado-noDisponible {
   background: rgba(239, 68, 68, 0.16);
   color: #f87171;
+}
+
+#divHeader-contenedor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+#divHeader-contenedor #btnNuevoContenedor {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+#opciones {
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: #9ca3af;
+  color: #e5e7eb;
+  width: fit-content;
+  cursor: pointer;
+}
+#opciones option {
+  background-color: #0b1120;
+  color: #e5e7eb;
+  padding: 5px;
+  cursor: pointer;
+}
+
+#btnFiltrar {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #9ca3af;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
 /*# sourceMappingURL=main-contenedor.css.map */

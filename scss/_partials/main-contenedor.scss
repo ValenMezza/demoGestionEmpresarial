@@ -1,8 +1,5 @@
 @use "../variables.scss" as *;
 
-header{
-    background-color: red;
-}
 .estado-pill {
     display: inline-block;
     padding: 0.25rem 0.5rem;
@@ -18,4 +15,59 @@ header{
 .estado-noDisponible {
     background: rgba(239, 68, 68, 0.16); // rojo suave con transparencia
     color: #f87171; // rojo pastel (Tailwind Red-400)
+}
+
+// .estado-mantenimiento {
+//     background: rgba(251, 191, 36, 0.16); // amarillo suave con transparencia
+//     color: #fbbf24; // amarillo pastel (Tailwind Yellow-400)
+// }
+
+
+#divHeader-contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    & #btnNuevoContenedor {
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 8px;
+        background: $primary;
+        color: $blanco;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        transition: background 0.2s ease, box-shadow 0.2s ease;
+    }
+}
+
+#opciones{
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: $text-muted;
+    color: $text-main;
+    width: fit-content;
+    cursor: pointer;
+    & option{
+        background-color: $bg-card;
+        color: $text-main;
+        padding: 5px;
+        cursor: pointer;
+    }
+}
+
+#btnFiltrar{
+
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 8px;
+        background: $text-muted;
+        color: $blanco;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        transition: background 0.2s ease, box-shadow 0.2s ease;
 }

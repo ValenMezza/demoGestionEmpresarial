@@ -17,14 +17,27 @@
         <nav>
             <ul>
                 <li><a href="./home.html">home</a></li>
+                <li><a href="#">Transacciones</a></li>
+                <li><a href="./ventas.html">Ventas</a></li>
+                <li><a href="./alquiler.html">Alquileres</a></li>
+                <li><a href="./contenedores.html">Contenedores</a></li>
             </ul>
+
         </nav>
     </header>
     <main id="alquiler-home">
         <section class="alquiler-panel">
-            <div id="divHeader-alquiler">
+            <div id="divHeader-contenedor">
                 <h2 class="alquiler-panel__title">Lista de Contenedores</h2>
-                <a href="./checkoutAlquiler.html"><button>Agregar contenedor</button></a>
+                <select id="opciones">
+                    <option value="" disabled selected>Seleccionar un filtro</option>
+                    <option value="1">Opción 1</option>
+                    <option value="2">Opción 2</option>
+                    <option value="3">Opción 3</option>
+                </select>
+
+                <button id="btnFiltrar">Filtrar</button>
+                <button id="btnNuevoContenedor">Agregar contenedor</button>
             </div>
 
             <table class="alquiler-table dark">
@@ -82,10 +95,32 @@
                             </a>
                         </td>
                     </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td><span class="estado-pill estado-disponible">Disponible</span></td>
+                        <td class="acciones">
+                            <a href="/alquiler/1" class="btn-accion ver" title="Ver">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+
+                            <a href="/alquiler/editar/1" class="btn-accion editar" title="Editar">
+                                <i class="fa-solid fa-pen"></i>
+                            </a>
+
+                            <a href="/alquiler/eliminar/1" class="btn-accion eliminar" title="Eliminar">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </section>
 
     </main>
 </body>
+
 </html>
