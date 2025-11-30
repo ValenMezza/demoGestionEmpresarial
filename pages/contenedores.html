@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo Contenedores</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="./home.html">home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="alquiler-home">
+        <section class="alquiler-panel">
+            <div id="divHeader-alquiler">
+                <h2 class="alquiler-panel__title">Lista de Contenedores</h2>
+                <a href="./checkoutAlquiler.html"><button>Agregar contenedor</button></a>
+            </div>
+
+            <table class="alquiler-table dark">
+                <thead>
+                    <tr>
+                        <th>#Contenedor</th>
+                        <th>Cliente</th>
+                        <th>Dirección</th>
+                        <th>Fecha Inicio</th>
+                        <th>Fecha Fin</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td><span class="estado-pill estado-disponible">Disponible</span></td>
+                        <td class="acciones">
+                            <a href="/alquiler/1" class="btn-accion ver" title="Ver">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+
+                            <a href="/alquiler/editar/1" class="btn-accion editar" title="Editar">
+                                <i class="fa-solid fa-pen"></i>
+                            </a>
+
+                            <a href="/alquiler/eliminar/1" class="btn-accion eliminar" title="Eliminar">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>María Gómez</td>
+                        <td>Av. Velez Sarsfield</td>
+                        <td>2024-02-01</td>
+                        <td>2024-02-10</td>
+                        <td><span class="estado-pill estado-noDisponible">No disponible</span></td>
+                        <td class="acciones">
+                            <a href="/alquiler/1" class="btn-accion ver" title="Ver">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+
+                            <a href="/alquiler/editar/1" class="btn-accion editar" title="Editar">
+                                <i class="fa-solid fa-pen"></i>
+                            </a>
+
+                            <a href="/alquiler/eliminar/1" class="btn-accion eliminar" title="Eliminar">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+</body>
+</html>
