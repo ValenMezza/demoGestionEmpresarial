@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo Clientes</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../home.html">home</a></li>
+                <li><a href="../transacciones/transacciones.html">Transacciones</a></li>
+                <li><a href="../venta/ventas.html">Ventas</a></li>
+                <li><a href="../alquiler/alquiler.html">Alquileres</a></li>
+                <li><a href="../contenedor/contenedores.html">Contenedores</a></li>
+                <li><a href="../cliente/clientes.html">Clientes</a></li>
+                <li><a href="../stock/stock.html">Stock</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="alquiler-home">
+        <section class="clientes-panel">
+            <div id="divHeader-clientes">
+                <h2 class="clientes-panel__title">Lista de Clientes</h2>
+
+                <select id="filtroClientes">
+                    <option value="" disabled selected>Seleccionar un filtro</option>
+                    <option value="activo">Activos</option>
+                    <option value="inactivo">Inactivos</option>
+                    <option value="deudores">Deudores</option>
+                </select>
+
+                <button id="btnFiltrarClientes">Filtrar</button>
+                <button id="btnNuevoCliente">Agregar cliente</button>
+            </div>
+
+            <table class="clientes-table dark">
+                <thead>
+                    <tr>
+                        <th>#ID</th>
+                        <th>Apellido y nombre</th>
+                        <th>DNI / CUIT</th>
+                        <th>Teléfono</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Juan Pérez</td>
+                        <td>32.456.789</td>
+                        <td>3514456789</td>
+                        <td><span class="estado-pill estado-disponible">Activo</span></td>
+                        <td class="acciones">
+                            <a href="detalleCliente.html" class="btn-accion ver" title="Ver"target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-eye"></i></a>
+                                
+                            </a>
+
+                            <a href="editarCliente.html" class="btn-accion editar" title="Editar">
+                                <i class="fa-solid fa-pen"></i>
+                            </a>
+
+                            <a href="/clientes/eliminar/1" class="btn-accion eliminar" title="Eliminar">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
+                            <a href="../cliente/clientes.html" class="btn-accion imprimir" title="Imprimir PDF">
+                                <i class="fa-solid fa-file-pdf"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>María Gómez</td>
+                        <td>27.334.112</td>
+                        <td>3517789123</td>
+                        <td><span class="estado-pill estado-noDisponible">Inactivo</span></td>
+                        <td class="acciones">
+                            <a href="/clientes/2" class="btn-accion ver" title="Ver">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+
+                            <a href="/clientes/editar/2" class="btn-accion editar" title="Editar">
+                                <i class="fa-solid fa-pen"></i>
+                            </a>
+
+                            <a href="/clientes/eliminar/2" class="btn-accion eliminar" title="Eliminar">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
+                            <a href="../cliente/clientes.html" class="btn-accion imprimir" title="Imprimir PDF">
+                                <i class="fa-solid fa-file-pdf"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>Carlos Ruiz</td>
+                        <td>20.998.112</td>
+                        <td>3518890011</td>
+                        <td><span class="estado-pill estado-disponible">Activo</span></td>
+                        <td class="acciones">
+                            <a href="/clientes/3" class="btn-accion ver" title="Ver">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+
+                            <a href="/clientes/editar/3" class="btn-accion editar" title="Editar">
+                                <i class="fa-solid fa-pen"></i>
+                            </a>
+
+                            <a href="/clientes/eliminar/3" class="btn-accion eliminar" title="Eliminar">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
+                            <a href="/clientes/pdf/1" class="btn-accion imprimir" title="Imprimir PDF">
+                                <i class="fa-solid fa-file-pdf"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+</body>
+
+</html>

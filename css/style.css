@@ -268,6 +268,9 @@ body {
   max-width: 1100px;
   margin: 24px auto;
   padding: 16px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: #0b1120;
 }
 
 .alquiler-panel__title {
@@ -536,9 +539,9 @@ input[type=number] {
   flex-direction: column;
   gap: 1.5rem;
   padding: 1.5rem;
-  background: #020617;
   color: #e5e7eb;
   min-height: 100vh;
+  border-radius: 16px;
 }
 
 /* Columna izquierda */
@@ -907,6 +910,1319 @@ input[type=number] {
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
   transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* =====================================
+   LAYOUT GENERAL CLIENTES
+===================================== */
+#clientes-home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+  justify-content: center;
+}
+
+/* Panel contenedor (similar a .alquiler-panel) */
+.clientes-panel {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 16px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: #0b1120;
+}
+
+/* Título del panel */
+.clientes-panel__title {
+  margin: 0 0 16px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* =====================================
+   HEADER DEL PANEL CLIENTES
+===================================== */
+#divHeader-clientes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  /* Botón "Agregar cliente" */
+}
+#divHeader-clientes #btnNuevoCliente {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+#divHeader-clientes #btnNuevoCliente:hover {
+  background: rgb(19.4285714286, 79.6571428571, 211.7714285714);
+}
+
+/* Select de filtro */
+#filtroClientes {
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: #9ca3af;
+  color: #e5e7eb;
+  width: fit-content;
+  cursor: pointer;
+}
+#filtroClientes option {
+  background-color: #0b1120;
+  color: #e5e7eb;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* Botón "Filtrar" */
+#btnFiltrarClientes {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #9ca3af;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+#btnFiltrarClientes:hover {
+  background: rgb(170.1033519553, 176.1061452514, 186.3966480447);
+}
+
+/* =====================================
+   ESTADOS DEL CLIENTE
+   (reutilizamos el estilo pill, pero con
+   nombres más semánticos para clientes)
+===================================== */
+.estado-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.estado-activo {
+  background: rgba(34, 197, 94, 0.16);
+  color: #4ade80;
+}
+
+.estado-inactivo {
+  background: rgba(239, 68, 68, 0.16);
+  color: #f87171;
+}
+
+.btn-accion.imprimir:hover {
+  background: #dcbb26;
+  color: white;
+}
+
+/* =====================================
+   TABLA DE CLIENTES
+   (misma estética que alquiler-table)
+===================================== */
+.clientes-table.dark {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  background: transparent;
+}
+
+.clientes-table.dark thead tr {
+  background: transparent;
+}
+
+.clientes-table.dark th {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #9ca3af;
+  text-align: left;
+  padding: 0 16px 6px;
+}
+
+/* Filas tipo tarjeta */
+.clientes-table.dark tbody tr {
+  background: #0b1120;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+}
+
+.clientes-table.dark tbody tr td:first-child {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.clientes-table.dark tbody tr td:last-child {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.clientes-table.dark td {
+  padding: 12px 16px;
+  vertical-align: middle;
+  border: none;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+}
+
+.clientes-table.dark th:first-child,
+.clientes-table.dark td:first-child {
+  width: 80px;
+  text-align: center;
+  color: #9ca3af;
+}
+
+.clientes-table.dark tbody tr:hover {
+  background: #111827;
+  transition: background 0.15s ease-in-out;
+}
+
+/* Acciones – podés usar las mismas clases
+   que ya tenés en alquiler (acciones, btn-accion)
+   o dejarlas globales para ambas tablas
+*/
+/* ================================
+   CONTENEDOR PRINCIPAL
+================================ */
+#clientes-home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+  justify-content: center;
+}
+
+.clientes-panel {
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 28px 36px;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: #0b1120;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+/* Título general */
+.pdf-header h1 {
+  margin: 0;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+}
+
+.pdf-header p {
+  margin-top: 4px;
+  color: #9ca3af;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ================================
+   SECCIONES DEL DETALLE
+================================ */
+.pdf-section {
+  margin-top: 24px;
+}
+.pdf-section h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #9ca3af;
+  padding-bottom: 4px;
+}
+.pdf-section p {
+  color: #e5e7eb;
+  font-size: 1rem;
+  margin: 4px 0;
+}
+.pdf-section strong {
+  color: #ffffff;
+}
+
+/* footer */
+.pdf-footer {
+  margin-top: 20px;
+  text-align: right;
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+
+/* ================================
+   BOTONES DEL DETALLE
+================================ */
+.form-actions {
+  margin-top: 28px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+/* Botón volver */
+.btn-cancelar {
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  text-decoration: none;
+  background: #9ca3af;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: 0.2s ease;
+}
+.btn-cancelar:hover {
+  background: rgb(170.1033519553, 176.1061452514, 186.3966480447);
+  transform: scale(1.02);
+}
+
+/* Botón editar */
+#btnEditarCliente,
+.btn-primario {
+  padding: 0.6rem 1.6rem;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+#btnEditarCliente:hover,
+.btn-primario:hover {
+  background: rgb(19.4285714286, 79.6571428571, 211.7714285714);
+  transform: scale(1.02);
+}
+
+/* ================================
+   CONTENEDOR PRINCIPAL
+================================ */
+#clientes-home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+  justify-content: center;
+}
+
+.clientes-panel {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 24px 32px;
+  background: #0b1120;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.clientes-panel__title {
+  margin: 0 0 22px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* ================================
+   FORMULARIO BASE
+================================ */
+.cliente-form {
+  display: grid;
+  gap: 1.4rem;
+  /* MOBILE — 1 sola columna */
+  grid-template-columns: 1fr;
+}
+
+/* ================================
+   FORM-GROUP GENERAL
+================================ */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.form-group label {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  font-weight: 500;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: none;
+  background: #1f2937;
+  color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.15s ease;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  background: #374151;
+  box-shadow: 0 0 0 2px #2563eb;
+}
+.form-group input[readonly] {
+  background: #272d37;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ================================
+   VERSIÓN DESKTOP (más ancha)
+================================ */
+@media (min-width: 768px) {
+  .cliente-form {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 2rem;
+  }
+  /* Campos que deben ocupar TODA la fila */
+  .form-group.full {
+    grid-column: span 2;
+  }
+  /* Botones deben quedar abajo y a la derecha */
+  .form-actions {
+    grid-column: span 2;
+    justify-content: flex-end;
+  }
+}
+/* ================================
+   TEXTAREA
+================================ */
+textarea {
+  resize: vertical;
+}
+
+/* ================================
+   BOTONES DEL FORMULARIO
+================================ */
+.form-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 14px;
+}
+
+#btnGuardarCliente {
+  padding: 0.7rem 1.6rem;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+#btnGuardarCliente:hover {
+  background: rgb(19.4285714286, 79.6571428571, 211.7714285714);
+  transform: scale(1.02);
+}
+
+.btn-cancelar {
+  padding: 0.7rem 1.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  background: #9ca3af;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: 0.2s ease;
+}
+.btn-cancelar:hover {
+  background: rgb(170.1033519553, 176.1061452514, 186.3966480447);
+  transform: scale(1.02);
+}
+
+/* ============================
+   CONTENEDOR GENERAL
+============================ */
+#contenedores-home {
+  width: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  width: fint;
+}
+
+.contenedor-panel--wide {
+  max-width: 1300px; /* 🔥 ANCHO DE DESKTOP REAL */
+  width: 100%;
+  background: #0b1120;
+  padding: 40px 50px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+  border: solid 2px rgb(153, 153, 153);
+}
+
+/* HEADER */
+.detalle-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+}
+
+.detalle-header p {
+  margin-top: 6px;
+  color: #9ca3af;
+  font-size: 1rem;
+}
+
+/* ============================
+   GRID PRINCIPAL
+============================ */
+.detalle-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 🔥 DOS COLUMNAS DESKTOP */
+  gap: 30px;
+}
+
+/* Caja de información */
+.detalle-box {
+  background: #0b1120;
+  padding: 24px 28px;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+.detalle-box h2 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 14px;
+  border-bottom: 1px solid #9ca3af;
+  padding-bottom: 4px;
+}
+.detalle-box p {
+  font-size: 1rem;
+  margin: 6px 0;
+  color: #e5e7eb;
+}
+.detalle-box p strong {
+  color: #ffffff;
+}
+
+/* ============================
+   MAPA ANCHO TOTAL
+============================ */
+.detalle-map {
+  grid-column: span 2; /* 🔥 el mapa ocupa todo el ancho */
+}
+
+.map-wrapper {
+  margin-top: 14px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.map-iframe {
+  width: 100%;
+  height: 420px; /* 🔥 mapa más grande */
+}
+@media (min-width: 1024px) {
+  .map-iframe {
+    height: 500px; /* tamaño grande desktop */
+  }
+}
+.map-iframe {
+  border: 0;
+}
+
+/* ============================
+   FOOTER
+============================ */
+.detalle-footer {
+  margin-top: 28px;
+  text-align: right;
+  color: #9ca3af;
+  font-size: 0.95rem;
+}
+
+/* ============================
+   BOTONES
+============================ */
+.detalle-actions {
+  margin-top: 32px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.btn-secundario {
+  padding: 0.7rem 1.6rem;
+  border-radius: 8px;
+  background: #9ca3af;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+.btn-secundario:hover {
+  background: rgb(172.9240223464, 178.7273743017, 188.6759776536);
+  transform: scale(1.03);
+}
+
+.btn-primario {
+  padding: 0.7rem 1.8rem;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+  transition: 0.2s ease;
+}
+.btn-primario:hover {
+  background: rgb(19.4285714286, 79.6571428571, 211.7714285714);
+  transform: scale(1.03);
+}
+
+/* ================================
+   BOTÓN IMPRIMIR DETALLE
+================================ */
+.btn-imprimir {
+  padding: 0.7rem 1.8rem;
+  border-radius: 8px;
+  background: #475569;
+  color: #ffffff;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(148, 163, 184, 0.25);
+  transition: 0.2s ease;
+}
+.btn-imprimir i {
+  font-size: 1rem;
+}
+.btn-imprimir:hover {
+  background: rgb(83.3443181818, 99.7784090909, 123.2556818182);
+  transform: scale(1.03);
+}
+.btn-imprimir:active {
+  transform: scale(0.98);
+}
+
+/* ================================
+   IMPRESIÓN SOLO DEL MAIN
+================================ */
+@media print {
+  /* 🔥 Oculta TODO excepto el main */
+  body * {
+    visibility: hidden !important;
+  }
+  /* 🔥 Muestra solo el contenido del main */
+  #contenedores-home,
+  #contenedores-home * {
+    visibility: visible !important;
+    color: #0b1120;
+  }
+  /* 🔥 Asegura que el main abarque toda la hoja */
+  #contenedores-home {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: white; /* si querés imprimir con fondo claro */
+    color: #0b1120;
+  }
+  /* ❌ Ocultar botones (no salen en el PDF) */
+  .detalle-actions {
+    display: none !important;
+  }
+  /* ❌ Ocultar nav, header, etc. */
+  header, nav {
+    display: none !important;
+  }
+  /* Opcional: agrandar tipografías para PDF */
+  .detalle-box p {
+    font-size: 1rem !important;
+  }
+}
+/* FORMULARIO BASE */
+.contenedor-form {
+  display: grid;
+  gap: 1.4rem;
+  grid-template-columns: 1fr;
+}
+
+/* FORM GROUP */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.form-group label {
+  color: #9ca3af;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: #1f2937;
+  border: none;
+  padding: 12px;
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.15s ease;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  background: #374151;
+  box-shadow: 0 0 0 2px #2563eb;
+}
+.form-group input[readonly] {
+  background: #2a3241;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+  .contenedor-form {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.4rem 2rem;
+  }
+  .form-group.full {
+    grid-column: span 2;
+  }
+  .form-actions.full {
+    grid-column: span 2;
+    justify-content: flex-end;
+    display: flex;
+    gap: 14px;
+  }
+}
+/* BOTONES */
+#btnGuardarContenedor {
+  padding: 0.7rem 1.6rem;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+#btnGuardarContenedor:hover {
+  background: rgb(19.4285714286, 79.6571428571, 211.7714285714);
+  transform: scale(1.02);
+}
+
+.btn-cancelar {
+  padding: 0.7rem 1.6rem;
+  background: #9ca3af;
+  color: #ffffff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+.btn-cancelar:hover {
+  background: rgb(170.1033519553, 176.1061452514, 186.3966480447);
+  transform: scale(1.02);
+}
+
+/* ==========================
+   LAYOUT GENERAL
+========================== */
+#transacciones-home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+  justify-content: center;
+}
+
+.transacciones-panel {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 16px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: #0b1120;
+}
+
+/* Título */
+.transacciones-panel__title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Header con filtros */
+#divHeader-transacciones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.transacciones-filtros {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.transacciones-filtros select {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background-color: #9ca3af;
+  color: #e5e7eb;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.transacciones-filtros select option {
+  background-color: #0b1120;
+  color: #e5e7eb;
+}
+
+#btnFiltrarTransacciones {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background: #9ca3af;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+#btnFiltrarTransacciones:hover {
+  background: rgb(170.1033519553, 176.1061452514, 186.3966480447);
+}
+
+/* ==========================
+   TABLA
+========================== */
+.transacciones-table.dark {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  background: transparent;
+}
+
+.transacciones-table.dark thead tr {
+  background: transparent;
+}
+
+.transacciones-table.dark th {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #9ca3af;
+  text-align: left;
+  padding: 0 16px 6px;
+}
+
+/* Filas tipo tarjeta */
+.transacciones-table.dark tbody tr {
+  background: #0b1120;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+}
+
+.transacciones-table.dark tbody tr td:first-child {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.transacciones-table.dark tbody tr td:last-child {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.transacciones-table.dark td {
+  padding: 12px 16px;
+  vertical-align: middle;
+  border: none;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+}
+
+.transacciones-table.dark th:first-child,
+.transacciones-table.dark td:first-child {
+  width: 70px;
+  text-align: center;
+  color: #9ca3af;
+}
+
+.transacciones-table.dark tbody tr:hover {
+  background: #111827;
+  transition: background 0.15s ease-in-out;
+}
+
+/* ==========================
+   ESTADOS
+========================== */
+.estado-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.estado-pagado {
+  background: rgba(34, 197, 94, 0.16);
+  color: #4ade80;
+}
+
+.estado-pendiente {
+  background: rgba(234, 179, 8, 0.16);
+  color: #facc15;
+}
+
+.estado-cancelado {
+  background: rgba(239, 68, 68, 0.16);
+  color: #f87171;
+}
+
+/* ==========================
+   ACCIONES
+========================== */
+.acciones {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.btn-accion {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.2s ease;
+  background: #1f2937;
+  color: #d1d5db;
+}
+
+.btn-accion:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+.btn-accion.ver:hover {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-accion.imprimir:hover {
+  background: #475569;
+  color: white;
+}
+
+@media print {
+  /* 1. Ocultar TODO por defecto */
+  body * {
+    visibility: hidden !important;
+  }
+  /* 2. Mostrar SOLO el main de transacciones */
+  #transacciones-home,
+  #transacciones-home * {
+    visibility: visible !important;
+  }
+  /* 3. Hacer que el main ocupe la página completa */
+  #transacciones-home {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 20px 30px !important;
+  }
+  /* 4. Opcional: fondo blanco, texto negro */
+  body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  #transacciones-home,
+  #transacciones-home * {
+    background: transparent !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    border-color: rgba(0, 0, 0, 0.1254901961) !important;
+  }
+  /* 5. Ocultar botones al imprimir */
+  .detalle-actions {
+    display: none !important;
+  }
+}
+/* ============================
+   CONTENEDOR GENERAL
+============================ */
+#transacciones-home {
+  width: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.transaccion-panel {
+  background: #0b1120;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: #0b1120;
+}
+
+.transaccion-panel--wide {
+  max-width: 1300px;
+  width: 100%;
+  padding: 40px 50px;
+}
+
+/* HEADER DEL DETALLE */
+.detalle-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+}
+
+.detalle-header p {
+  margin-top: 6px;
+  color: #9ca3af;
+  font-size: 1rem;
+}
+
+/* ============================
+   GRID PRINCIPAL
+============================ */
+.detalle-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.detalle-box {
+  background: #0b1120;
+  padding: 24px 28px;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+.detalle-box h2 {
+  margin-top: 0;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 14px;
+  border-bottom: 1px solid #9ca3af;
+  padding-bottom: 4px;
+}
+.detalle-box p {
+  font-size: 1rem;
+  margin: 6px 0;
+  color: #e5e7eb;
+}
+.detalle-box p strong {
+  color: #ffffff;
+}
+
+/* caja que ocupa todo el ancho (detalle asociado) */
+.detalle-box--full {
+  grid-column: span 2;
+}
+
+/* ============================
+   FOOTER
+============================ */
+.detalle-footer {
+  margin-top: 28px;
+  text-align: right;
+  color: #9ca3af;
+  font-size: 0.95rem;
+}
+
+/* ============================
+   BOTONES
+============================ */
+.detalle-actions {
+  margin-top: 32px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.btn-secundario {
+  padding: 0.7rem 1.6rem;
+  border-radius: 8px;
+  background: #9ca3af;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: 0.2s ease;
+}
+.btn-secundario:hover {
+  background: rgb(172.9240223464, 178.7273743017, 188.6759776536);
+  transform: scale(1.03);
+}
+
+.btn-primario {
+  padding: 0.7rem 1.8rem;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+  transition: 0.2s ease;
+}
+.btn-primario:hover {
+  background: rgb(19.4285714286, 79.6571428571, 211.7714285714);
+  transform: scale(1.03);
+}
+
+.btn-imprimir {
+  padding: 0.7rem 1.8rem;
+  border-radius: 8px;
+  background: #475569;
+  color: #ffffff;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(148, 163, 184, 0.25);
+  transition: 0.2s ease;
+}
+.btn-imprimir i {
+  font-size: 1rem;
+}
+.btn-imprimir:hover {
+  background: rgb(83.3443181818, 99.7784090909, 123.2556818182);
+  transform: scale(1.03);
+}
+.btn-imprimir:active {
+  transform: scale(0.98);
+}
+
+@media print {
+  /* 1. Ocultar TODO por defecto */
+  body * {
+    visibility: hidden !important;
+  }
+  /* 2. Mostrar SOLO el main de transacciones */
+  #transacciones-home,
+  #transacciones-home * {
+    visibility: visible !important;
+  }
+  /* 3. Hacer que el main ocupe la página completa */
+  #transacciones-home {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 20px 30px !important;
+  }
+  /* 4. Opcional: fondo blanco, texto negro */
+  body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  #transacciones-home,
+  #transacciones-home * {
+    background: transparent !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    border-color: rgba(0, 0, 0, 0.1254901961) !important;
+  }
+  /* 5. Ocultar botones al imprimir */
+  .detalle-actions {
+    display: none !important;
+  }
+}
+/* ============================
+   CONTENEDOR GENERAL
+============================ */
+#stock-home {
+  width: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.stock-panel {
+  max-width: 1200px;
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: #0b1120;
+  padding: 32px 40px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+}
+
+.stock-panel__title {
+  margin: 0 0 1.5rem;
+  color: #ffffff;
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+/* ============================
+   TABLA DE STOCK
+============================ */
+.stock-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+}
+
+.stock-table thead th {
+  text-align: left;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #9ca3af;
+  padding: 0 16px;
+}
+
+/* Filas estilo tarjetas */
+.stock-table tbody tr {
+  background: #0b1120;
+  border-radius: 12px;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.45);
+}
+
+.stock-table tbody td {
+  padding: 16px;
+  color: #e5e7eb;
+  font-size: 1rem;
+  border: none;
+}
+
+/* Primera columna centrada */
+.stock-table td:first-child {
+  width: 80px;
+  text-align: center;
+  color: #9ca3af;
+}
+
+/* Acción + botón */
+.stock-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.btn-accion {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #1f2937;
+  color: #d1d5db;
+  font-size: 1rem;
+  transition: 0.2s ease;
+}
+.btn-accion:hover {
+  transform: scale(1.1);
+  background: #2563eb;
+  color: white;
+}
+
+/* ============================
+   PILL DEL STOCK
+============================ */
+.stock-pill {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* verde = disponible */
+.stock-alto {
+  background: rgba(34, 197, 94, 0.16);
+  color: #4ade80;
+}
+
+/* amarillo = stock medio */
+.stock-medio {
+  background: rgba(250, 204, 21, 0.16);
+  color: #facc15;
+}
+
+/* rojo = bajo stock */
+.stock-bajo {
+  background: rgba(239, 68, 68, 0.16);
+  color: #f87171;
+}
+
+/* ============================
+   BOTÓN AGREGAR PRODUCTO
+============================ */
+#btnNuevoProducto {
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  float: right;
+  margin-bottom: 1.4rem;
+  transition: 0.2s ease;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+#btnNuevoProducto:hover {
+  background: rgb(19.4285714286, 79.6571428571, 211.7714285714);
+  transform: scale(1.03);
 }
 
 /*# sourceMappingURL=style.css.map */

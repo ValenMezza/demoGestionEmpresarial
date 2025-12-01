@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Editar contenedor</title>
+    <link rel="stylesheet" href="./css/main-contenedores.css">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../home.html">home</a></li>
+                <li><a href="../transacciones/transacciones.html">Transacciones</a></li>
+                <li><a href="../venta/ventas.html">Ventas</a></li>
+                <li><a href="../alquiler/alquiler.html">Alquileres</a></li>
+                <li><a href="../contenedor/contenedores.html">Contenedores</a></li>
+                <li><a href="../cliente/clientes.html">Clientes</a></li>
+                <li><a href="../stock/stock.html">Stock</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="contenedores-home">
+        <section class="contenedor-panel contenedor-panel--wide">
+
+            <header class="detalle-header">
+                <h1>Editar contenedor #3</h1>
+                <p>Modificá la información del contenedor</p>
+            </header>
+
+            <!-- FORMULARIO -->
+            <form class="contenedor-form">
+
+                <!-- Número del contenedor -->
+                <div class="form-group">
+                    <label for="numero">Número de contenedor</label>
+                    <input type="text" id="numero" value="3" readonly>
+                </div>
+
+                <!-- Estado -->
+                <div class="form-group">
+                    <label for="estado">Estado</label>
+                    <select id="estado">
+                        <option value="disponible">Disponible</option>
+                        <option value="noDisponible" selected>Alquilado - No disponible</option>
+                        <option value="mantenimiento">En mantenimiento</option>
+                    </select>
+                </div>
+
+                <!-- Fecha inicio -->
+                <div class="form-group">
+                    <label for="fechaInicio">Fecha de inicio</label>
+                    <input type="date" id="fechaInicio" value="2025-11-25">
+                </div>
+
+                <!-- Fecha fin -->
+                <div class="form-group">
+                    <label for="fechaFin">Fecha de fin</label>
+                    <input type="date" id="fechaFin" value="2025-12-04">
+                </div>
+
+                <!-- Tipo -->
+                <div class="form-group">
+                    <label for="tipo">Tipo de contenedor</label>
+                    <select id="tipo">
+                        <option>Residuos de obra</option>
+                        <option>Escombros</option>
+                        <option>Áridos</option>
+                    </select>
+                </div>
+
+                <!-- Dirección -->
+                <div class="form-group full">
+                    <label for="direccion">Dirección de colocación</label>
+                    <input type="text" id="direccion" value="Av. Vélez Sarsfield 1234, Córdoba">
+                </div>
+
+                <!-- Observaciones -->
+                <div class="form-group full">
+                    <label for="observaciones">Observaciones</label>
+                    <textarea id="observaciones"
+                        rows="3">Cliente solicita levantar el contenedor el día 04/12.</textarea>
+                </div>
+
+                <!-- ACCIONES -->
+                <div class="form-actions full">
+                    <a href="./detalleContenedor.html" class="btn-cancelar">Cancelar</a>
+                    <button id="btnGuardarContenedor" type="submit">Guardar cambios</button>
+                </div>
+            </form>
+
+        </section>
+    </main>
+
+</body>
+
+</html>

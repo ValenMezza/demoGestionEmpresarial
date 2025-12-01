@@ -1,0 +1,150 @@
+@use "../variables.scss" as *;
+
+/* ================================
+   CONTENEDOR PRINCIPAL
+================================ */
+#clientes-home {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+    justify-content: center;
+}
+
+.clientes-panel {
+    max-width: 1100px; // 🔥 más ancho
+    margin: 20px auto;
+    padding: 24px 32px;
+    background: $bg-card;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.clientes-panel__title {
+    margin: 0 0 22px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: $blanco;
+}
+
+/* ================================
+   FORMULARIO BASE
+================================ */
+.cliente-form {
+    display: grid;
+    gap: 1.4rem;
+
+    /* MOBILE — 1 sola columna */
+    grid-template-columns: 1fr;
+}
+
+/* ================================
+   FORM-GROUP GENERAL
+================================ */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    label {
+        font-size: 0.9rem;
+        color: $text-muted;
+        font-weight: 500;
+    }
+
+    input,
+    select,
+    textarea {
+        padding: 12px 14px;
+        border-radius: 10px;
+        border: none;
+        background: #1f2937;
+        color: $blanco;
+        font-size: 1rem;
+        outline: none;
+        transition: 0.15s ease;
+
+        &:focus {
+            background: #374151;
+            box-shadow: 0 0 0 2px $primary;
+        }
+    }
+
+    input[readonly] {
+        background: #272d37;
+        opacity: 0.7;
+        cursor: not-allowed;
+    }
+}
+
+/* ================================
+   VERSIÓN DESKTOP (más ancha)
+================================ */
+@media (min-width: 768px) {
+    .cliente-form {
+        grid-template-columns: repeat(2, 1fr); // 🔥 2 columnas
+        gap: 1.5rem 2rem; // vertical - horizontal
+    }
+
+    /* Campos que deben ocupar TODA la fila */
+    .form-group.full {
+        grid-column: span 2;
+    }
+
+    /* Botones deben quedar abajo y a la derecha */
+    .form-actions {
+        grid-column: span 2;
+        justify-content: flex-end;
+    }
+}
+
+/* ================================
+   TEXTAREA
+================================ */
+textarea {
+    resize: vertical;
+}
+
+/* ================================
+   BOTONES DEL FORMULARIO
+================================ */
+.form-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 14px;
+}
+
+#btnGuardarCliente {
+    padding: 0.7rem 1.6rem;
+    border: none;
+    border-radius: 8px;
+    background: $primary;
+    color: $blanco;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    transition: background 0.2s ease, transform 0.15s ease;
+
+    &:hover {
+        background: darken($primary, 8%);
+        transform: scale(1.02);
+    }
+}
+
+.btn-cancelar {
+    padding: 0.7rem 1.6rem;
+    border-radius: 8px;
+    text-decoration: none;
+    background: $text-muted;
+    color: $blanco;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: 0.2s ease;
+
+    &:hover {
+        background: lighten($text-muted, 5%);
+        transform: scale(1.02);
+    }
+}

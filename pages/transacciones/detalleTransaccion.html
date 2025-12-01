@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle de la transacción</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <!-- Font Awesome (si no lo tenés ya en el layout general) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../home.html">home</a></li>
+                <li><a href="../transacciones/transacciones.html">Transacciones</a></li>
+                <li><a href="../venta/ventas.html">Ventas</a></li>
+                <li><a href="../alquiler/alquiler.html">Alquileres</a></li>
+                <li><a href="../contenedor/contenedores.html">Contenedores</a></li>
+                <li><a href="../cliente/clientes.html">Clientes</a></li>
+                <li><a href="../stock/stock.html">Stock</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="transacciones-home">
+        <section class="transaccion-panel transaccion-panel--wide">
+            <header class="detalle-header">
+                <h1>Transacción #0001</h1>
+                <p>Detalle completo de la operación registrada</p>
+            </header>
+
+            <!-- GRID PRINCIPAL -->
+            <div class="detalle-grid">
+                <!-- INFO GENERAL -->
+                <section class="detalle-box">
+                    <h2>Información general</h2>
+                    <p><strong>Tipo:</strong> Alquiler</p>
+                    <p><strong>Fecha:</strong> 25/11/2025</p>
+                    <p><strong>Método de pago:</strong> Transferencia bancaria</p>
+                    <p><strong>Estado:</strong> Pagado</p>
+                    <p><strong>Total:</strong> $120.000</p>
+                </section>
+
+                <!-- CLIENTE -->
+                <section class="detalle-box">
+                    <h2>Cliente</h2>
+                    <p><strong>Nombre:</strong> María Gómez</p>
+                    <p><strong>DNI / CUIT:</strong> 27.334.112</p>
+                    <p><strong>Teléfono:</strong> 351 7789123</p>
+                    <p><strong>Email:</strong> maria.gomez@correo.com</p>
+                    <p><strong>Dirección de facturación:</strong> B° Centro – Córdoba</p>
+                </section>
+
+                <!-- ASOCIADO (CONTENEDOR / VENTA) -->
+                <section class="detalle-box detalle-box--full">
+                    <h2>Detalle asociado</h2>
+                    <p><strong>Módulo:</strong> Alquiler de contenedor</p>
+                    <p><strong>Contenedor:</strong> #3</p>
+                    <p><strong>Dirección de servicio:</strong> Av. Vélez Sarsfield 1234, Córdoba</p>
+                    <p><strong>Observaciones:</strong> Retiro programado para el 04/12/2025. Sin novedades al momento.
+                    </p>
+                </section>
+            </div>
+
+            <!-- FOOTER -->
+            <footer class="detalle-footer">
+                <p>Última actualización: 30/11/2025</p>
+            </footer>
+
+            <!-- ACCIONES -->
+            <div class="detalle-actions">
+                <a href="./transacciones.html" class="btn-secundario">
+                    Volver
+                </a>
+
+                <!-- si más adelante querés edición de transacción -->
+                <!-- <a href="./editar-transaccion.html?id=1" class="btn-primario">Editar datos</a> -->
+
+                <button class="btn-imprimir" onclick="window.print()">
+                    <i class="fa-solid fa-print"></i> Imprimir transacción
+                </button>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

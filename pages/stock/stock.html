@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <!-- Font Awesome para iconos de acciones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../home.html">home</a></li>
+                <li><a href="../transacciones/transacciones.html">Transacciones</a></li>
+                <li><a href="../venta/ventas.html">Ventas</a></li>
+                <li><a href="../alquiler/alquiler.html">Alquileres</a></li>
+                <li><a href="../contenedor/contenedores.html">Contenedores</a></li>
+                <li><a href="../cliente/clientes.html">Clientes</a></li>
+                <li><a href="../stock/stock.html">Stock</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="stock-home">
+        <section class="stock-panel">
+            <div class="stock-header">
+                <h2 class="stock-panel__title">Stock de productos</h2>
+
+                <div class="stock-header__actions">
+                    <button id="btnActualizarStock">Actualizar stock</button>
+                    <!-- a futuro: botón para nuevo producto -->
+                    <button id="btnNuevoProducto">Nuevo producto</button>
+                </div>
+            </div>
+
+            <table class="stock-table dark">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Producto</th>
+                        <th>Precio unitario</th>
+                        <th>Stock actual</th>
+                        <th>Stock mínimo</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <!-- TIERRA -->
+                    <tr>
+                        <td>1</td>
+                        <td>Tierra</td>
+                        <td>$9.850</td>
+                        <td>25</td>
+                        <td>5</td>
+                        <td>
+                            <span class="estado-pill estado-activo">Disponible</span>
+                        </td>
+                        <td class="acciones">
+                            <a href="#" class="btn-accion ver" title="Ver detalle">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+                            <a href="#" class="btn-accion editar" title="Editar stock">
+                                <i class="fa-solid fa-pen"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!-- ARENA -->
+                    <tr>
+                        <td>2</td>
+                        <td>Arena</td>
+                        <td>$8.500</td>
+                        <td>18</td>
+                        <td>5</td>
+                        <td>
+                            <span class="estado-pill estado-activo">Disponible</span>
+                        </td>
+                        <td class="acciones">
+                            <a href="#" class="btn-accion ver" title="Ver detalle">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+                            <a href="#" class="btn-accion editar" title="Editar stock">
+                                <i class="fa-solid fa-pen"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!-- ARENA ZARANDEADA -->
+                    <tr>
+                        <td>3</td>
+                        <td>Arena zarandeada</td>
+                        <td>$12.300</td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>
+                            <span class="estado-pill estado-activo">Disponible</span>
+                        </td>
+                        <td class="acciones">
+                            <a href="#" class="btn-accion ver" title="Ver detalle">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+                            <a href="#" class="btn-accion editar" title="Editar stock">
+                                <i class="fa-solid fa-pen"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!-- PIEDRA -->
+                    <tr>
+                        <td>4</td>
+                        <td>Piedra</td>
+                        <td>$6.900</td>
+                        <td>8</td>
+                        <td>5</td>
+                        <td>
+                            <span class="estado-pill estado-inactivo">Bajo stock</span>
+                        </td>
+                        <td class="acciones">
+                            <a href="#" class="btn-accion ver" title="Ver detalle">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+                            <a href="#" class="btn-accion editar" title="Editar stock">
+                                <i class="fa-solid fa-pen"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!-- GRANZA -->
+                    <tr>
+                        <td>5</td>
+                        <td>Granza</td>
+                        <td>$11.750</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td>
+                            <span class="estado-pill estado-inactivo">Sin stock</span>
+                        </td>
+                        <td class="acciones">
+                            <a href="#" class="btn-accion ver" title="Ver detalle">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+                            <a href="#" class="btn-accion editar" title="Editar stock">
+                                <i class="fa-solid fa-pen"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

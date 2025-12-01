@@ -1,0 +1,240 @@
+@charset "UTF-8";
+/* ==========================
+   LAYOUT GENERAL
+========================== */
+#transacciones-home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+  justify-content: center;
+}
+
+.transacciones-panel {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 16px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: #0b1120;
+}
+
+/* Título */
+.transacciones-panel__title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Header con filtros */
+#divHeader-transacciones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.transacciones-filtros {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.transacciones-filtros select {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background-color: #9ca3af;
+  color: #e5e7eb;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.transacciones-filtros select option {
+  background-color: #0b1120;
+  color: #e5e7eb;
+}
+
+#btnFiltrarTransacciones {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background: #9ca3af;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+#btnFiltrarTransacciones:hover {
+  background: rgb(170.1033519553, 176.1061452514, 186.3966480447);
+}
+
+/* ==========================
+   TABLA
+========================== */
+.transacciones-table.dark {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  background: transparent;
+}
+
+.transacciones-table.dark thead tr {
+  background: transparent;
+}
+
+.transacciones-table.dark th {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #9ca3af;
+  text-align: left;
+  padding: 0 16px 6px;
+}
+
+/* Filas tipo tarjeta */
+.transacciones-table.dark tbody tr {
+  background: #0b1120;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+}
+
+.transacciones-table.dark tbody tr td:first-child {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.transacciones-table.dark tbody tr td:last-child {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.transacciones-table.dark td {
+  padding: 12px 16px;
+  vertical-align: middle;
+  border: none;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+}
+
+.transacciones-table.dark th:first-child,
+.transacciones-table.dark td:first-child {
+  width: 70px;
+  text-align: center;
+  color: #9ca3af;
+}
+
+.transacciones-table.dark tbody tr:hover {
+  background: #111827;
+  transition: background 0.15s ease-in-out;
+}
+
+/* ==========================
+   ESTADOS
+========================== */
+.estado-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.estado-pagado {
+  background: rgba(34, 197, 94, 0.16);
+  color: #4ade80;
+}
+
+.estado-pendiente {
+  background: rgba(234, 179, 8, 0.16);
+  color: #facc15;
+}
+
+.estado-cancelado {
+  background: rgba(239, 68, 68, 0.16);
+  color: #f87171;
+}
+
+/* ==========================
+   ACCIONES
+========================== */
+.acciones {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.btn-accion {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.2s ease;
+  background: #1f2937;
+  color: #d1d5db;
+}
+
+.btn-accion:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+.btn-accion.ver:hover {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-accion.imprimir:hover {
+  background: #475569;
+  color: white;
+}
+
+@media print {
+  /* 1. Ocultar TODO por defecto */
+  body * {
+    visibility: hidden !important;
+  }
+  /* 2. Mostrar SOLO el main de transacciones */
+  #transacciones-home,
+  #transacciones-home * {
+    visibility: visible !important;
+  }
+  /* 3. Hacer que el main ocupe la página completa */
+  #transacciones-home {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 20px 30px !important;
+  }
+  /* 4. Opcional: fondo blanco, texto negro */
+  body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  #transacciones-home,
+  #transacciones-home * {
+    background: transparent !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    border-color: rgba(0, 0, 0, 0.1254901961) !important;
+  }
+  /* 5. Ocultar botones al imprimir */
+  .detalle-actions {
+    display: none !important;
+  }
+}
+
+/*# sourceMappingURL=main-transacciones.css.map */

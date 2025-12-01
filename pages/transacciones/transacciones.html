@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Transacciones</title>
+    <link rel="stylesheet" href="./css/main-transacciones.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <!-- Acordate de tener FontAwesome si usás los íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../home.html">home</a></li>
+                <li><a href="../transacciones/transacciones.html">Transacciones</a></li>
+                <li><a href="../venta/ventas.html">Ventas</a></li>
+                <li><a href="../alquiler/alquiler.html">Alquileres</a></li>
+                <li><a href="../contenedor/contenedores.html">Contenedores</a></li>
+                <li><a href="../cliente/clientes.html">Clientes</a></li>
+                <li><a href="../stock/stock.html">Stock</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="transacciones-home">
+        <section class="transacciones-panel">
+            <div id="divHeader-transacciones">
+                <h2 class="transacciones-panel__title">Transacciones</h2>
+
+                <div class="transacciones-filtros">
+                    <select id="filtroTipo">
+                        <option value="" selected>Tipo transacción</option>
+                        <option value="venta">Ventas</option>
+                        <option value="alquiler">Alquileres</option>
+                        <option value="pago_cc">Pago Cuenta Corriente</option>
+                    </select>
+
+                    <select id="filtroEstado">
+                        <option value="" selected>Todos los estados</option>
+                        <option value="pagado">Pagado</option>
+                        <option value="cancelado">Cancelado</option>
+                    </select>
+
+                    <button id="btnFiltrarTransacciones">Filtrar</button>
+                </div>
+            </div>
+
+            <table class="transacciones-table dark">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Fecha</th>
+                        <th>Tipo</th>
+                        <th>Cliente</th>
+                        <th>Importe</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>25/11/2025</td>
+                        <td>Alquiler</td>
+                        <td>María Gómez</td>
+                        <td>$ 95.000</td>
+                        <td><span class="estado-pill estado-pagado">Pagado</span></td>
+                        <td class="acciones">
+                            <!-- Ver detalle -->
+                            <a href="./detalleTransaccion.html" class="btn-accion ver" title="Ver detalle">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>26/11/2025</td>
+                        <td>Venta</td>
+                        <td>Juan Pérez</td>
+                        <td>$ 42.500</td>
+                        <td><span class="estado-pill estado-pagado">Pagado</span></td>
+                        <td class="acciones">
+                            <a href="detalle-transaccion.html?id=2" class="btn-accion ver" title="Ver detalle">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>28/11/2025</td>
+                        <td>Alquiler</td>
+                        <td>Carlos Ruiz</td>
+                        <td>$ 120.000</td>
+                        <td><span class="estado-pill estado-cancelado">Cancelado</span></td>
+                        <td class="acciones">
+                            <a href="detalle-transaccion.html?id=3" class="btn-accion ver" title="Ver detalle">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>28/11/2025</td>
+                        <td>Pago Cuenta Corriente</td>
+                        <td>Carlos Ruiz</td>
+                        <td>$ 350.000</td>
+                        <td><span class="estado-pill estado-pagado">Pagado</span></td>
+                        <td class="acciones">
+                            <a href="detalle-transaccion.html?id=3" class="btn-accion ver" title="Ver detalle">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+</body>
+
+</html>

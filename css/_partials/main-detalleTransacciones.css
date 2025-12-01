@@ -1,0 +1,197 @@
+@charset "UTF-8";
+/* ============================
+   CONTENEDOR GENERAL
+============================ */
+#transacciones-home {
+  width: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.transaccion-panel {
+  background: #0b1120;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: #0b1120;
+}
+
+.transaccion-panel--wide {
+  max-width: 1300px;
+  width: 100%;
+  padding: 40px 50px;
+}
+
+/* HEADER DEL DETALLE */
+.detalle-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+}
+
+.detalle-header p {
+  margin-top: 6px;
+  color: #9ca3af;
+  font-size: 1rem;
+}
+
+/* ============================
+   GRID PRINCIPAL
+============================ */
+.detalle-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.detalle-box {
+  background: #0b1120;
+  padding: 24px 28px;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+.detalle-box h2 {
+  margin-top: 0;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 14px;
+  border-bottom: 1px solid #9ca3af;
+  padding-bottom: 4px;
+}
+.detalle-box p {
+  font-size: 1rem;
+  margin: 6px 0;
+  color: #e5e7eb;
+}
+.detalle-box p strong {
+  color: #ffffff;
+}
+
+/* caja que ocupa todo el ancho (detalle asociado) */
+.detalle-box--full {
+  grid-column: span 2;
+}
+
+/* ============================
+   FOOTER
+============================ */
+.detalle-footer {
+  margin-top: 28px;
+  text-align: right;
+  color: #9ca3af;
+  font-size: 0.95rem;
+}
+
+/* ============================
+   BOTONES
+============================ */
+.detalle-actions {
+  margin-top: 32px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.btn-secundario {
+  padding: 0.7rem 1.6rem;
+  border-radius: 8px;
+  background: #9ca3af;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: 0.2s ease;
+}
+.btn-secundario:hover {
+  background: rgb(172.9240223464, 178.7273743017, 188.6759776536);
+  transform: scale(1.03);
+}
+
+.btn-primario {
+  padding: 0.7rem 1.8rem;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+  transition: 0.2s ease;
+}
+.btn-primario:hover {
+  background: rgb(19.4285714286, 79.6571428571, 211.7714285714);
+  transform: scale(1.03);
+}
+
+.btn-imprimir {
+  padding: 0.7rem 1.8rem;
+  border-radius: 8px;
+  background: #475569;
+  color: #ffffff;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(148, 163, 184, 0.25);
+  transition: 0.2s ease;
+}
+.btn-imprimir i {
+  font-size: 1rem;
+}
+.btn-imprimir:hover {
+  background: rgb(83.3443181818, 99.7784090909, 123.2556818182);
+  transform: scale(1.03);
+}
+.btn-imprimir:active {
+  transform: scale(0.98);
+}
+
+@media print {
+  /* 1. Ocultar TODO por defecto */
+  body * {
+    visibility: hidden !important;
+  }
+  /* 2. Mostrar SOLO el main de transacciones */
+  #transacciones-home,
+  #transacciones-home * {
+    visibility: visible !important;
+  }
+  /* 3. Hacer que el main ocupe la página completa */
+  #transacciones-home {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 20px 30px !important;
+  }
+  /* 4. Opcional: fondo blanco, texto negro */
+  body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  #transacciones-home,
+  #transacciones-home * {
+    background: transparent !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    border-color: rgba(0, 0, 0, 0.1254901961) !important;
+  }
+  /* 5. Ocultar botones al imprimir */
+  .detalle-actions {
+    display: none !important;
+  }
+}
+
+/*# sourceMappingURL=main-detalleTransacciones.css.map */

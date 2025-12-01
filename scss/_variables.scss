@@ -1,14 +1,3 @@
-// $blanco: #e5e7eb;
-// $black: #0F172A;
-// $negro:#020617;
-// $gris-claro: #E2E8F0;
-// $gris-oscuro: #9ca3af;
-// $azul: #2563EB;
-// $azul-oscuro: #1E293B;
-// $rojo: #DC2626;
-// $verde: #16A34A;
-
-
 
 
 // Colores base (dark theme)
@@ -16,6 +5,7 @@ $bg-page:        #020617;      // fondo general
 $bg-card:        #0b1120;      // fondo de cada card
 $bg-card-hover:  #111827;
 $border-card:    #1f2937;
+$border-radius-main: 16px;
 
 $primary:        #2563eb;      // azul principal
 $primary-soft:   #1d4ed8;      // azul un poco más oscuro
@@ -24,6 +14,7 @@ $text-main:      #e5e7eb;      // texto principal
 $text-muted:     #9ca3af;      // texto secundario
 
 $shadow-card:    0 18px 35px rgba(15, 23, 42, 0.65);
+$color-border:  solid 2px rgb(153, 153, 153);
 
 // Si ya los usabas, podés mapearlos a los nuevos:
 $azul:        $primary;

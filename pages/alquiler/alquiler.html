@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Módulo Alquileres</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -16,20 +16,30 @@
     <header>
         <nav>
             <ul>
-                <li><a href="./home.html">home</a></li>
-                <li><a href="#">Transacciones</a></li>
-                <li><a href="./ventas.html">Ventas</a></li>
-                <li><a href="./alquiler.html">Alquileres</a></li>
-                <li><a href="./contenedores.html">Contenedores</a></li>
+                <li><a href="../home.html">home</a></li>
+                <li><a href="../transacciones/transacciones.html">Transacciones</a></li>
+                <li><a href="../venta/ventas.html">Ventas</a></li>
+                <li><a href="../alquiler/alquiler.html">Alquileres</a></li>
+                <li><a href="../contenedor/contenedores.html">Contenedores</a></li>
+                <li><a href="../cliente/clientes.html">Clientes</a></li>
+                <li><a href="../stock/stock.html">Stock</a></li>
             </ul>
-
         </nav>
     </header>
-    <h1>Alquileres</h1>
     <main id="alquiler-home">
         <section class="alquiler-panel">
             <div id="divHeader-alquiler">
                 <h2 class="alquiler-panel__title">Lista de Alquileres</h2>
+                <select id="opciones">
+                    <option value="" disabled selected>Seleccionar un filtro</option>
+                    <option value="1">Alquiler: Activo</option>
+                    <option value="2">Alquiler: Finalizado</option>
+                    <option value="3">#Alquiler: Mayor - Menor</option>
+                    <option value="3">#Alquiler: Menor - Mayor</option>
+
+                </select>
+
+                <button id="btnFiltrar">Filtrar</button>
                 <a href="./checkoutAlquiler.html"><button id="btnNuevoAlquiler">Nuevo alquiler</button></a>
 
             </div>

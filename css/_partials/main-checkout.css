@@ -17,9 +17,9 @@ input[type=number] {
   flex-direction: column;
   gap: 1.5rem;
   padding: 1.5rem;
-  background: #020617;
   color: #e5e7eb;
   min-height: 100vh;
+  border-radius: 16px;
 }
 
 /* Columna izquierda */

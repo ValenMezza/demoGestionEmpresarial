@@ -1,0 +1,118 @@
+@charset "UTF-8";
+/* ================================
+   CONTENEDOR PRINCIPAL
+================================ */
+#clientes-home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+  justify-content: center;
+}
+
+.clientes-panel {
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 28px 36px;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: #0b1120;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+/* Título general */
+.pdf-header h1 {
+  margin: 0;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+}
+
+.pdf-header p {
+  margin-top: 4px;
+  color: #9ca3af;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ================================
+   SECCIONES DEL DETALLE
+================================ */
+.pdf-section {
+  margin-top: 24px;
+}
+.pdf-section h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #9ca3af;
+  padding-bottom: 4px;
+}
+.pdf-section p {
+  color: #e5e7eb;
+  font-size: 1rem;
+  margin: 4px 0;
+}
+.pdf-section strong {
+  color: #ffffff;
+}
+
+/* footer */
+.pdf-footer {
+  margin-top: 20px;
+  text-align: right;
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+
+/* ================================
+   BOTONES DEL DETALLE
+================================ */
+.form-actions {
+  margin-top: 28px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+/* Botón volver */
+.btn-cancelar {
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  text-decoration: none;
+  background: #9ca3af;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: 0.2s ease;
+}
+.btn-cancelar:hover {
+  background: rgb(170.1033519553, 176.1061452514, 186.3966480447);
+  transform: scale(1.02);
+}
+
+/* Botón editar */
+#btnEditarCliente,
+.btn-primario {
+  padding: 0.6rem 1.6rem;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+#btnEditarCliente:hover,
+.btn-primario:hover {
+  background: rgb(19.4285714286, 79.6571428571, 211.7714285714);
+  transform: scale(1.02);
+}
+
+/*# sourceMappingURL=detalle-cliente.css.map */

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar cliente</title>
+    <link rel="stylesheet" href="../../css/style.css">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../home.html">home</a></li>
+                <li><a href="../transacciones/transacciones.html">Transacciones</a></li>
+                <li><a href="../venta/ventas.html">Ventas</a></li>
+                <li><a href="../alquiler/alquiler.html">Alquileres</a></li>
+                <li><a href="../contenedor/contenedores.html">Contenedores</a></li>
+                <li><a href="../cliente/clientes.html">Clientes</a></li>
+                <li><a href="../stock/stock.html">Stock</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="clientes-home">
+        <section class="clientes-panel">
+            <h2 class="clientes-panel__title">Editar cliente</h2>
+
+            <!-- Opcional: breadcrumb / link de volver -->
+            <p style="margin-bottom: 1rem;">
+                <a href="clientes.html" style="color: #60a5fa; text-decoration: none;">← Volver al listado</a>
+            </p>
+
+            <form id="formEditarCliente" class="cliente-form">
+                <!-- ID solo lectura -->
+                <div class="form-group">
+                    <label for="clienteId">ID Cliente</label>
+                    <input type="text" id="clienteId" name="clienteId" value="1" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" id="nombre" name="nombre" value="Juan Pérez" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="documento">DNI / CUIT</label>
+                    <input type="text" id="documento" name="documento" value="32.456.789" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" value="351 4456789">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" value="juan.perez@correo.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" id="direccion" name="direccion" value="B° Centro – Córdoba">
+                </div>
+
+                <div class="form-group">
+                    <label for="estado">Estado</label>
+                    <select id="estado" name="estado">
+                        <option value="activo" selected>Activo</option>
+                        <option value="inactivo">Inactivo</option>
+                        <option value="deudor">Deudor</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="observaciones">Observaciones</label>
+                    <textarea id="observaciones" name="observaciones" rows="3">Cliente sin deudas registradas.</textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" id="btnGuardarCliente">Guardar cambios</button>
+                    <a href="clientes.html" class="btn-cancelar">Cancelar</a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+</body>
+</html>

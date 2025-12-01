@@ -1,4 +1,6 @@
 /* --- LAYOUT PRINCIPAL CHECKOUT --- */
+@use "../variables.scss" as *;
+
 
 /* Quitar flechas en Chrome, Edge, Safari */
 input[type="number"]::-webkit-inner-spin-button,
@@ -17,9 +19,11 @@ input[type="number"] {
   flex-direction: column;
   gap: 1.5rem;
   padding: 1.5rem;
-  background: #020617; // fondo general oscuro
+
+
   color: #e5e7eb;
   min-height: 100vh;
+  border-radius: $border-radius-main;
 }
 
 /* Columna izquierda */

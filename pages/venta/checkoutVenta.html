@@ -4,13 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <title>Finalizar compra</title>
 </head>
 
 <body>
+      <header>
+        <nav>
+            <ul>
+                <li><a href="../home.html">home</a></li>
+                <li><a href="../transacciones/transacciones.html">Transacciones</a></li>
+                <li><a href="../venta/ventas.html">Ventas</a></li>
+                <li><a href="../alquiler/alquiler.html">Alquileres</a></li>
+                <li><a href="../contenedor/contenedores.html">Contenedores</a></li>
+                <li><a href="../cliente/clientes.html">Clientes</a></li>
+                <li><a href="../stock/stock.html">Stock</a></li>
+            </ul>
+        </nav>
+    </header>
     <main class="checkout">
   <!-- Paso 1: Datos del cliente -->
   <section class="checkout__content">
@@ -93,21 +106,7 @@
         </label>
       </div>
 
-      <!-- Datos de tarjeta (opcional, a nivel diseño) -->
-      <div class="checkout__grid checkout__grid--card">
-        <div class="field">
-          <label for="numero-tarjeta">Número de tarjeta</label>
-          <input type="text" id="numero-tarjeta" name="numero_tarjeta" placeholder="XXXX XXXX XXXX XXXX">
-        </div>
-        <div class="field">
-          <label for="vencimiento">Vencimiento</label>
-          <input type="text" id="vencimiento" name="vencimiento" placeholder="MM/AA">
-        </div>
-        <div class="field">
-          <label for="cvv">CVV</label>
-          <input type="password" id="cvv" name="cvv" placeholder="•••">
-        </div>
-      </div>
+
     </section>
 
     <!-- Botón confirmar -->
@@ -115,7 +114,7 @@
       <button class="checkout__btn-confirm" type="submit">
         Confirmar compra
       </button>
-      <a href="./home.html" class="checkout__btn-secondary">Cancelar compra</a>
+      <a href="./ventas.html" class="checkout__btn-secondary">Cancelar compra</a>
     </div>
   </section>
 
