@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #alquiler-home {
   width: 100%;
   display: flex;
@@ -50,6 +51,7 @@
 
 .alquiler-table.dark thead tr {
   background: transparent;
+  border: white solid 2px;
 }
 
 .alquiler-table.dark th {
@@ -66,6 +68,7 @@
   background: #0b1120;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
   border-radius: 12px;
+  border: solid 2px rgb(153, 153, 153);
 }
 
 .alquiler-table.dark tbody tr td:first-child {
@@ -95,7 +98,9 @@
 
 .alquiler-table.dark tbody tr:hover {
   background: #111827;
+  border-color: white solid 2px;
   transition: background 0.15s ease-in-out;
+  border: white solid 2px;
 }
 
 /* Estado tipo pill */
@@ -157,6 +162,22 @@
 .btn-accion.eliminar:hover {
   background: #dc2626;
   color: white;
+} /* 🔥 Bordes blancos en cada fila */
+.alquiler-table.dark tbody tr {
+  background: #0b1120;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+}
+
+/* Para que no se vea cortado en las esquinas */
+.alquiler-table.dark tbody tr td:first-child {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.alquiler-table.dark tbody tr td:last-child {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
 /*# sourceMappingURL=main-alquier.css.map */

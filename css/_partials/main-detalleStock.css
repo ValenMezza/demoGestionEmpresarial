@@ -1,0 +1,102 @@
+/* CONTENEDOR GENERAL */
+#stock-home {
+  width: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.stock-panel {
+  background: #0b1120;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+  border: solid 2px rgb(153, 153, 153);
+}
+
+.stock-panel--wide {
+  max-width: 1300px;
+  width: 100%;
+  padding: 40px 50px;
+  border: solid 2px rgb(153, 153, 153);
+}
+
+/* HEADER */
+.detalle-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.detalle-header p {
+  color: #9ca3af;
+  margin-top: 6px;
+}
+
+/* GRID */
+.detalle-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.detalle-box {
+  background: #0b1120;
+  padding: 24px 28px;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+.detalle-box h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #ffffff;
+  border-bottom: 1px solid #9ca3af;
+  padding-bottom: 4px;
+}
+.detalle-box p {
+  color: #e5e7eb;
+  margin: 6px 0;
+}
+.detalle-box p strong {
+  color: #ffffff;
+}
+
+.detalle-box--full {
+  grid-column: span 2;
+}
+
+/* FOOTER */
+.detalle-footer {
+  margin-top: 20px;
+  text-align: right;
+  color: #9ca3af;
+}
+
+/* ACCIONES */
+.detalle-actions {
+  margin-top: 30px;
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+}
+
+.btn-eliminar {
+  padding: 0.7rem 1.7rem;
+  border-radius: 8px;
+  background: #dc2626;
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  transition: 0.2s ease;
+}
+.btn-eliminar:hover {
+  background: rgb(178.25, 28.75, 28.75);
+  transform: scale(1.03);
+}
+
+/*# sourceMappingURL=main-detalleStock.css.map */

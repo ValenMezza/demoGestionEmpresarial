@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Stock</title>
@@ -7,11 +8,12 @@
     <!-- Font Awesome para iconos de acciones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="../home.html">home</a></li>
+                <li><a href="../home.html">Home</a></li>
                 <li><a href="../transacciones/transacciones.html">Transacciones</a></li>
                 <li><a href="../venta/ventas.html">Ventas</a></li>
                 <li><a href="../alquiler/alquiler.html">Alquileres</a></li>
@@ -28,9 +30,14 @@
                 <h2 class="stock-panel__title">Stock de productos</h2>
 
                 <div class="stock-header__actions">
-                    <button id="btnActualizarStock">Actualizar stock</button>
+                    <button class="btn-actualizar">
+                        <i class="fa-solid fa-arrow-rotate-right"></i>
+                        Actualizar stock
+                    </button>
                     <!-- a futuro: botón para nuevo producto -->
-                    <button id="btnNuevoProducto">Nuevo producto</button>
+                    <a href="./creacionProducto.html"> <button id="btnNuevoProducto">Nuevo producto</button>
+                    </a>
+
                 </div>
             </div>
 
@@ -59,12 +66,16 @@
                             <span class="estado-pill estado-activo">Disponible</span>
                         </td>
                         <td class="acciones">
-                            <a href="#" class="btn-accion ver" title="Ver detalle">
+                            <a href="./detalleStock.html" class="btn-accion ver" title="Ver detalle">
                                 <i class="fa-solid fa-eye"></i>
                             </a>
-                            <a href="#" class="btn-accion editar" title="Editar stock">
+                            <a href="./edicionStock.html" class="btn-accion editar" title="Editar stock">
                                 <i class="fa-solid fa-pen"></i>
                             </a>
+                            <a href="#" class="btn-accion eliminar" title="Eliminar producto">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
+
                         </td>
                     </tr>
 
@@ -85,6 +96,10 @@
                             <a href="#" class="btn-accion editar" title="Editar stock">
                                 <i class="fa-solid fa-pen"></i>
                             </a>
+                            <a href="#" class="btn-accion eliminar" title="Eliminar producto">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
+
                         </td>
                     </tr>
 
@@ -105,6 +120,10 @@
                             <a href="#" class="btn-accion editar" title="Editar stock">
                                 <i class="fa-solid fa-pen"></i>
                             </a>
+                            <a href="#" class="btn-accion eliminar" title="Eliminar producto">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
+
                         </td>
                     </tr>
 
@@ -125,6 +144,10 @@
                             <a href="#" class="btn-accion editar" title="Editar stock">
                                 <i class="fa-solid fa-pen"></i>
                             </a>
+                            <a href="#" class="btn-accion eliminar" title="Eliminar producto">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
+
                         </td>
                     </tr>
 
@@ -145,6 +168,10 @@
                             <a href="#" class="btn-accion editar" title="Editar stock">
                                 <i class="fa-solid fa-pen"></i>
                             </a>
+                            <a href="#" class="btn-accion eliminar" title="Eliminar producto">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
+
                         </td>
                     </tr>
                 </tbody>
@@ -152,4 +179,5 @@
         </section>
     </main>
 </body>
+
 </html>

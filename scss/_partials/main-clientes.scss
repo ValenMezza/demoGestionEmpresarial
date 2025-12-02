@@ -3,6 +3,10 @@
 /* =====================================
    LAYOUT GENERAL CLIENTES
 ===================================== */
+section{
+    width: 100%;
+}
+
 #clientes-home {
     width: 100%;
     display: flex;
@@ -14,11 +18,11 @@
 
 /* Panel contenedor (similar a .alquiler-panel) */
 .clientes-panel {
-    max-width: 1100px;
+    max-width: 75%;
     margin: 24px auto;
     padding: 16px 20px;
     border-radius: 16px;
-    border: 1px solid rgba(148, 163, 184, 0.4);
+    border: 10px solid rgba(148, 163, 184, 0.4);
     background: $bg-card;
 
 }
@@ -63,7 +67,6 @@
     margin-left: 10px;
     padding: 5px;
     border-radius: 5px;
-    border: 1px solid black;
     background-color: $text-muted;
     color: $text-main;
     width: fit-content;
@@ -187,7 +190,23 @@
     transition: background 0.15s ease-in-out;
 }
 
-/* Acciones – podés usar las mismas clases
-   que ya tenés en alquiler (acciones, btn-accion)
-   o dejarlas globales para ambas tablas
-*/
+#buscadorClientes {
+    padding: 0.55rem 0.8rem;
+    margin: 2%;
+    border-radius: 8px;
+    border: 2px solid #ffffff;
+    background: #0b1120;
+    color: #e5e7eb;
+    width: 240px;
+    outline: none;
+    transition: border 0.15s ease;
+}
+
+#buscadorClientes::placeholder {
+    color: #64748b;
+}
+
+#buscadorClientes:focus {
+    border-color: #3b82f6;
+}
+

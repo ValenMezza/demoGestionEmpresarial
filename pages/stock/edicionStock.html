@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Editar producto - Stock</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../home.html">home</a></li>
+                <li><a href="../transacciones/transacciones.html">Transacciones</a></li>
+                <li><a href="../venta/ventas.html">Ventas</a></li>
+                <li><a href="../alquiler/alquiler.html">Alquileres</a></li>
+                <li><a href="../contenedor/contenedores.html">Contenedores</a></li>
+                <li><a href="../cliente/clientes.html">Clientes</a></li>
+                <li><a href="../stock/stock.html">Stock</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="stock-home">
+        <section class="stock-panel stock-panel--wide">
+            <header class="stock-detalle-header">
+                <h1>Editar producto: Tierra</h1>
+                <p>Modificá los datos del producto y su stock actual</p>
+            </header>
+
+            <form class="stock-form" id="formEditarStock">
+                <div class="form-group">
+                    <label for="codigo">Código</label>
+                    <input type="text" id="codigo" name="codigo" value="001" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="nombre">Nombre del producto</label>
+                    <input type="text" id="nombre" name="nombre" value="Tierra" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="precio">Precio unitario ($)</label>
+                    <input type="number" id="precio" name="precio" value="9850" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="stockActual">Stock actual</label>
+                    <input type="number" id="stockActual" name="stockActual" value="25" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="stockMinimo">Stock mínimo</label>
+                    <input type="number" id="stockMinimo" name="stockMinimo" value="5" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="estado">Estado</label>
+                    <select id="estado" name="estado">
+                        <option value="disponible" selected>Disponible</option>
+                        <option value="bajo">Bajo stock</option>
+                        <option value="sin">Sin stock</option>
+                    </select>
+                </div>
+
+                <div class="stock-detalle-actions">
+                    <a href="./stock.html" class="btn-secundario">Cancelar</a>
+                    <button class="btn-eliminar">
+                        <i class="fa-solid fa-trash"></i> Eliminar producto
+                    </button>       
+                    <button type="submit" class="btn-primario">Guardar cambios</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>

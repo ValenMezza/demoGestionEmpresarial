@@ -16,7 +16,7 @@
     <header>
         <nav>
             <ul>
-                <li><a href="../home.html">home</a></li>
+                <li><a href="../home.html">Home</a></li>
                 <li><a href="../transacciones/transacciones.html">Transacciones</a></li>
                 <li><a href="../venta/ventas.html">Ventas</a></li>
                 <li><a href="../alquiler/alquiler.html">Alquileres</a></li>
@@ -31,6 +31,7 @@
             <div id="divHeader-clientes">
                 <h2 class="clientes-panel__title">Lista de Clientes</h2>
 
+
                 <select id="filtroClientes">
                     <option value="" disabled selected>Seleccionar un filtro</option>
                     <option value="activo">Activos</option>
@@ -39,6 +40,10 @@
                 </select>
 
                 <button id="btnFiltrarClientes">Filtrar</button>
+
+                <!-- 🔍 BUSCADOR NUEVO -->
+                <input type="text" id="buscadorClientes" placeholder="Buscar cliente por nombre o DNI...">
+                <button id="btnNuevoCliente">Buscar cliente</button>
                 <button id="btnNuevoCliente">Agregar cliente</button>
             </div>
 
@@ -62,8 +67,9 @@
                         <td>3514456789</td>
                         <td><span class="estado-pill estado-disponible">Activo</span></td>
                         <td class="acciones">
-                            <a href="detalleCliente.html" class="btn-accion ver" title="Ver"target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-eye"></i></a>
-                                
+                            <a href="detalleCliente.html" class="btn-accion ver" title="Ver" target="_blank"
+                                rel="noopener noreferrer"><i class="fa-solid fa-eye"></i></a>
+
                             </a>
 
                             <a href="editarCliente.html" class="btn-accion editar" title="Editar">

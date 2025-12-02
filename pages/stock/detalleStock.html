@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle del producto</title>
+
+    <!-- CSS general -->
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../home.html">home</a></li>
+                <li><a href="../transacciones/transacciones.html">Transacciones</a></li>
+                <li><a href="../venta/ventas.html">Ventas</a></li>
+                <li><a href="../alquiler/alquiler.html">Alquileres</a></li>
+                <li><a href="../contenedor/contenedores.html">Contenedores</a></li>
+                <li><a href="../cliente/clientes.html">Clientes</a></li>
+                <li><a href="../stock/stock.html">Stock</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="stock-home">
+        <section class="stock-panel stock-panel--wide">
+            <header class="detalle-header">
+                <h1>Producto: Tierra</h1>
+                <p>Detalle completo del producto en inventario</p>
+            </header>
+
+            <!-- GRID PRINCIPAL -->
+            <div class="detalle-grid">
+
+                <!-- Información del producto -->
+                <section class="detalle-box">
+                    <h2>Información del producto</h2>
+                    <p><strong>Nombre:</strong> Tierra</p>
+                    <p><strong>ID:</strong> 1</p>
+
+                    <p><strong>Precio unitario:</strong> $9.850</p>
+                    <p><strong>Categoría:</strong> Materiales áridos</p>
+                </section>
+
+                <!-- STOCK -->
+                <section class="detalle-box">
+                    <h2>Stock</h2>
+                    <p><strong>Stock actual:</strong> 25 unidades</p>
+                    <p><strong>Stock mínimo:</strong> 5 unidades</p>
+                    <p><strong>Estado:</strong> Disponible</p>
+                </section>
+
+                <!-- Observaciones -->
+                <section class="detalle-box detalle-box--full">
+                    <h2>Observaciones</h2>
+                    <p>Producto de alta rotación. Se recomienda revisar inventario cada 48 horas.</p>
+                </section>
+
+            </div>
+
+            <!-- FOOTER -->
+            <footer class="detalle-footer">
+                <p>Última actualización: 01/12/2025</p>
+            </footer>
+
+            <!-- ACCIONES -->
+            <div class="detalle-actions">
+
+                <!-- Volver -->
+                <a href="./stock.html" class="btn-secundario">
+                    Volver
+                </a>
+
+                <!-- Editar producto -->
+                <a href="./edicionStock.html" class="btn-primario">
+                    <i class="fa-solid fa-pen"></i> Editar producto
+                </a>
+
+                <!-- Eliminar producto -->
+                <button class="btn-eliminar">
+                    <i class="fa-solid fa-trash"></i> Eliminar producto
+                </button>
+
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

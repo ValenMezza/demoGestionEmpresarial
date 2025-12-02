@@ -13,8 +13,6 @@
 .stock-panel {
     max-width: 1200px;
     width: 100%;
-    border-radius: 16px;
-    border: 1px solid rgba(148, 163, 184, 0.4);
     background: $bg-card;
     padding: 32px 40px;
     border-radius: 16px;
@@ -51,6 +49,7 @@
     background: #0b1120;
     border-radius: 12px;
     box-shadow: 0 5px 16px rgba(0,0,0,0.45);
+    border: $color-border;
 }
 
 .stock-table tbody td {
@@ -59,6 +58,15 @@
     font-size: 1rem;
     border: none;
 }
+.stock-table.dark tbody tr {
+    background: $bg-card;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .45);
+    border-radius: 12px;
+
+    /* 🔥 BORDE BLANCO */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
 
 /* Primera columna centrada */
 .stock-table td:first-child {
@@ -140,5 +148,153 @@
     &:hover {
         background: darken($primary, 8%);
         transform: scale(1.03);
+    }
+}
+/* ============================
+   BOTÓN ACTUALIZAR STOCK
+============================ */
+.btn-actualizar {
+    padding: 0.6rem 1.6rem;
+    border-radius: 8px;
+    border: none;
+    background: $primary; 
+    color: $blanco;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+    transition: 0.2s ease;
+
+    i {
+        font-size: 1rem;
+    }
+
+    &:hover {
+        background: darken($primary, 8%);
+        transform: scale(1.03);
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+}
+
+#stock-home {
+    width: 100%;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.stock-panel {
+    background: $bg-card;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .45);
+}
+
+.stock-panel--wide {
+    max-width: 1100px;
+    width: 100%;
+    padding: 32px 40px;
+}
+
+.stock-detalle-header {
+    h1 {
+        margin: 0;
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: $blanco;
+    }
+
+    p {
+        margin-top: 6px;
+        color: $text-muted;
+        font-size: 0.95rem;
+    }
+}
+
+.stock-detalle-box {
+    margin-top: 24px;
+    background: #0b1120;
+    padding: 20px 24px;
+    border-radius: 12px;
+    border: 1px solid rgba(148, 163, 184, 0.3);
+
+    h2 {
+        margin-top: 0;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: $blanco;
+        border-bottom: 1px solid $text-muted;
+        padding-bottom: 4px;
+        margin-bottom: 12px;
+    }
+
+    p {
+        margin: 4px 0;
+        font-size: 0.95rem;
+        color: $text-main;
+
+        strong {
+            color: $blanco;
+        }
+    }
+}
+
+.stock-detalle-footer {
+    margin-top: 18px;
+    text-align: right;
+    color: $text-muted;
+    font-size: 0.85rem;
+}
+
+.stock-detalle-actions {
+    margin-top: 24px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.btn-eliminar-definitivo {
+    padding: 0.7rem 1.6rem;
+    border-radius: 8px;
+    border: none;
+    background: #dc2626;
+    color: $blanco;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: 0.2s ease;
+
+    &:hover {
+        background: darken(#dc2626, 8%);
+        transform: scale(1.02);
+    }
+}
+
+/* Podés reutilizar .btn-secundario y .btn-primario que ya usás en otras vistas */
+
+.btn-editar-stock {
+    padding: 0.7rem 1.6rem;
+    border-radius: 8px;
+    border: none;
+    background: $primary;
+    color: $blanco;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: 0.2s ease;
+
+    &:hover {
+        background: darken($primary, 8%);
+        transform: scale(1.02);
     }
 }

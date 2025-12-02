@@ -289,6 +289,7 @@ body {
 
 .alquiler-table.dark thead tr {
   background: transparent;
+  border: white solid 2px;
 }
 
 .alquiler-table.dark th {
@@ -305,6 +306,7 @@ body {
   background: #0b1120;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
   border-radius: 12px;
+  border: solid 2px rgb(153, 153, 153);
 }
 
 .alquiler-table.dark tbody tr td:first-child {
@@ -334,7 +336,9 @@ body {
 
 .alquiler-table.dark tbody tr:hover {
   background: #111827;
+  border-color: white solid 2px;
   transition: background 0.15s ease-in-out;
+  border: white solid 2px;
 }
 
 /* Estado tipo pill */
@@ -396,6 +400,22 @@ body {
 .btn-accion.eliminar:hover {
   background: #dc2626;
   color: white;
+} /* 🔥 Bordes blancos en cada fila */
+.alquiler-table.dark tbody tr {
+  background: #0b1120;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+}
+
+/* Para que no se vea cortado en las esquinas */
+.alquiler-table.dark tbody tr td:first-child {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.alquiler-table.dark tbody tr td:last-child {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
 /* --- ASIDE CARRO DE COMPRAS --- */
@@ -915,6 +935,10 @@ input[type=number] {
 /* =====================================
    LAYOUT GENERAL CLIENTES
 ===================================== */
+section {
+  width: 100%;
+}
+
 #clientes-home {
   width: 100%;
   display: flex;
@@ -926,11 +950,11 @@ input[type=number] {
 
 /* Panel contenedor (similar a .alquiler-panel) */
 .clientes-panel {
-  max-width: 1100px;
+  max-width: 75%;
   margin: 24px auto;
   padding: 16px 20px;
   border-radius: 16px;
-  border: 1px solid rgba(148, 163, 184, 0.4);
+  border: 10px solid rgba(148, 163, 184, 0.4);
   background: #0b1120;
 }
 
@@ -972,7 +996,6 @@ input[type=number] {
   margin-left: 10px;
   padding: 5px;
   border-radius: 5px;
-  border: 1px solid black;
   background-color: #9ca3af;
   color: #e5e7eb;
   width: fit-content;
@@ -1091,10 +1114,26 @@ input[type=number] {
   transition: background 0.15s ease-in-out;
 }
 
-/* Acciones – podés usar las mismas clases
-   que ya tenés en alquiler (acciones, btn-accion)
-   o dejarlas globales para ambas tablas
-*/
+#buscadorClientes {
+  padding: 0.55rem 0.8rem;
+  margin: 2%;
+  border-radius: 8px;
+  border: 2px solid #ffffff;
+  background: #0b1120;
+  color: #e5e7eb;
+  width: 240px;
+  outline: none;
+  transition: border 0.15s ease;
+}
+
+#buscadorClientes::placeholder {
+  color: #64748b;
+}
+
+#buscadorClientes:focus {
+  border-color: #3b82f6;
+}
+
 /* ================================
    CONTENEDOR PRINCIPAL
 ================================ */
@@ -2097,8 +2136,6 @@ textarea {
 .stock-panel {
   max-width: 1200px;
   width: 100%;
-  border-radius: 16px;
-  border: 1px solid rgba(148, 163, 184, 0.4);
   background: #0b1120;
   padding: 32px 40px;
   border-radius: 16px;
@@ -2135,6 +2172,7 @@ textarea {
   background: #0b1120;
   border-radius: 12px;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.45);
+  border: solid 2px rgb(153, 153, 153);
 }
 
 .stock-table tbody td {
@@ -2142,6 +2180,14 @@ textarea {
   color: #e5e7eb;
   font-size: 1rem;
   border: none;
+}
+
+.stock-table.dark tbody tr {
+  background: #0b1120;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+  border-radius: 12px;
+  /* 🔥 BORDE BLANCO */
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* Primera columna centrada */
@@ -2223,6 +2269,361 @@ textarea {
 #btnNuevoProducto:hover {
   background: rgb(19.4285714286, 79.6571428571, 211.7714285714);
   transform: scale(1.03);
+}
+
+/* ============================
+   BOTÓN ACTUALIZAR STOCK
+============================ */
+.btn-actualizar {
+  padding: 0.6rem 1.6rem;
+  border-radius: 8px;
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+  transition: 0.2s ease;
+}
+.btn-actualizar i {
+  font-size: 1rem;
+}
+.btn-actualizar:hover {
+  background: rgb(19.4285714286, 79.6571428571, 211.7714285714);
+  transform: scale(1.03);
+}
+.btn-actualizar:active {
+  transform: scale(0.98);
+}
+
+#stock-home {
+  width: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.stock-panel {
+  background: #0b1120;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+}
+
+.stock-panel--wide {
+  max-width: 1100px;
+  width: 100%;
+  padding: 32px 40px;
+}
+
+.stock-detalle-header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+.stock-detalle-header p {
+  margin-top: 6px;
+  color: #9ca3af;
+  font-size: 0.95rem;
+}
+
+.stock-detalle-box {
+  margin-top: 24px;
+  background: #0b1120;
+  padding: 20px 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+.stock-detalle-box h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  border-bottom: 1px solid #9ca3af;
+  padding-bottom: 4px;
+  margin-bottom: 12px;
+}
+.stock-detalle-box p {
+  margin: 4px 0;
+  font-size: 0.95rem;
+  color: #e5e7eb;
+}
+.stock-detalle-box p strong {
+  color: #ffffff;
+}
+
+.stock-detalle-footer {
+  margin-top: 18px;
+  text-align: right;
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+
+.stock-detalle-actions {
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.btn-eliminar-definitivo {
+  padding: 0.7rem 1.6rem;
+  border-radius: 8px;
+  border: none;
+  background: #dc2626;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.2s ease;
+}
+.btn-eliminar-definitivo:hover {
+  background: rgb(187.0333333333, 30.1666666667, 30.1666666667);
+  transform: scale(1.02);
+}
+
+/* Podés reutilizar .btn-secundario y .btn-primario que ya usás en otras vistas */
+.btn-editar-stock {
+  padding: 0.7rem 1.6rem;
+  border-radius: 8px;
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.2s ease;
+}
+.btn-editar-stock:hover {
+  background: rgb(19.4285714286, 79.6571428571, 211.7714285714);
+  transform: scale(1.02);
+}
+
+/* CONTENEDOR GENERAL */
+#stock-home {
+  width: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.stock-panel {
+  background: #0b1120;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+  border: solid 2px rgb(153, 153, 153);
+}
+
+.stock-panel--wide {
+  max-width: 1300px;
+  width: 100%;
+  padding: 40px 50px;
+  border: solid 2px rgb(153, 153, 153);
+}
+
+/* HEADER */
+.detalle-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.detalle-header p {
+  color: #9ca3af;
+  margin-top: 6px;
+}
+
+/* GRID */
+.detalle-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.detalle-box {
+  background: #0b1120;
+  padding: 24px 28px;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+.detalle-box h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #ffffff;
+  border-bottom: 1px solid #9ca3af;
+  padding-bottom: 4px;
+}
+.detalle-box p {
+  color: #e5e7eb;
+  margin: 6px 0;
+}
+.detalle-box p strong {
+  color: #ffffff;
+}
+
+.detalle-box--full {
+  grid-column: span 2;
+}
+
+/* FOOTER */
+.detalle-footer {
+  margin-top: 20px;
+  text-align: right;
+  color: #9ca3af;
+}
+
+/* ACCIONES */
+.detalle-actions {
+  margin-top: 30px;
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+}
+
+.btn-eliminar {
+  padding: 0.7rem 1.7rem;
+  border-radius: 8px;
+  background: #dc2626;
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  transition: 0.2s ease;
+}
+.btn-eliminar:hover {
+  background: rgb(178.25, 28.75, 28.75);
+  transform: scale(1.03);
+}
+
+.producto-nuevo {
+  background: #020617;
+  color: #e5e7eb;
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.producto-nuevo__header h2 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.producto-nuevo__header p {
+  margin: 0.35rem 0 0;
+  color: #9ca3af;
+  font-size: 0.95rem;
+}
+
+/* Layout del formulario */
+.producto-nuevo__form {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.producto-nuevo__col {
+  background: #0b1120;
+  border-radius: 14px;
+  padding: 1rem 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.55rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #1f2937;
+  background: #020617;
+  color: #e5e7eb;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #3b82f6;
+}
+
+/* Inputs en línea (precio/stock, etc.) */
+.form-group--inline {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+/* Botones */
+.producto-nuevo__actions {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.btn {
+  border-radius: 999px;
+  padding: 0.55rem 1.2rem;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn--primary {
+  background: #3b82f6;
+  color: #f9fafb;
+}
+
+.btn--primary:hover {
+  filter: brightness(1.08);
+}
+
+.btn--secondary {
+  background: #111827;
+  color: #e5e7eb;
+  border: 1px solid #374151;
+}
+
+.btn--secondary:hover {
+  background: #020617;
+}
+
+/* Responsive: dos columnas en desktop */
+@media (min-width: 900px) {
+  .producto-nuevo__form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
