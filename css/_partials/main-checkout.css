@@ -132,6 +132,7 @@ input[type=number] {
   font-size: 0.95rem;
   outline: none;
   transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  justify-content: baseline;
 }
 .input-group input::placeholder {
   color: #6b7280;

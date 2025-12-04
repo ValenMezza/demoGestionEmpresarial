@@ -40,11 +40,16 @@
                 </select>
 
                 <button id="btnFiltrarClientes">Filtrar</button>
-
-                <!-- 🔍 BUSCADOR NUEVO -->
-                <input type="text" id="buscadorClientes" placeholder="Buscar cliente por nombre o DNI...">
-                <button id="btnNuevoCliente">Buscar cliente</button>
-                <button id="btnNuevoCliente">Agregar cliente</button>
+                <div class="input-group">
+                    <div>
+                        <input type="number" id="dniFormClient" placeholder="XX.XXX.XXX">
+                        <button class="btn-inline">Buscar</button>
+                    </div>
+                </div>
+                <a href="./nuevoCliente.html"> <button class="btnCliente">Agregar cliente</button>
+                </a>
+                <a href="./cuentaCorriente.html"> <button class="btnCliente">Cuentas corrientes</button>
+                </a>
             </div>
 
             <table class="clientes-table dark">

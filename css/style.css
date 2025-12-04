@@ -674,6 +674,7 @@ input[type=number] {
   font-size: 0.95rem;
   outline: none;
   transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  justify-content: baseline;
 }
 .input-group input::placeholder {
   color: #6b7280;
@@ -976,7 +977,7 @@ section {
   margin-bottom: 1rem;
   /* Botón "Agregar cliente" */
 }
-#divHeader-clientes #btnNuevoCliente {
+#divHeader-clientes .btnCliente {
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 8px;
@@ -987,7 +988,7 @@ section {
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
   transition: background 0.2s ease, box-shadow 0.2s ease;
 }
-#divHeader-clientes #btnNuevoCliente:hover {
+#divHeader-clientes .btnCliente:hover {
   background: rgb(19.4285714286, 79.6571428571, 211.7714285714);
 }
 
