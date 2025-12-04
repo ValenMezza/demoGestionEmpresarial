@@ -59,7 +59,7 @@ section {
 }
 
 /* Select de filtro */
-#filtroClientes {
+.filtroClientes {
   margin-left: 10px;
   padding: 5px;
   border-radius: 5px;
@@ -68,7 +68,7 @@ section {
   width: fit-content;
   cursor: pointer;
 }
-#filtroClientes option {
+.filtroClientes option {
   background-color: #0b1120;
   color: #e5e7eb;
   padding: 5px;
@@ -88,6 +88,22 @@ section {
   transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 #btnFiltrarClientes:hover {
+  background: rgb(170.1033519553, 176.1061452514, 186.3966480447);
+}
+
+/*filtra de cuentas corrientes*/
+#btnFiltrarCuentas {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #9ca3af;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+#btnFiltrarCuentas:hover {
   background: rgb(170.1033519553, 176.1061452514, 186.3966480447);
 }
 
