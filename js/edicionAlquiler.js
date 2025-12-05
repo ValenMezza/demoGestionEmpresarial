@@ -1,55 +1,138 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const direccionInput = document.getElementById("direccion");
-    const ciudadInput = document.getElementById("ciudad");
-    const provinciaInput = document.getElementById("provincia");
-    const cpInput = document.getElementById("cp");
+  // ======================================================
+  // FUNCIÓN COMPARTIDA: arma dirección completa
+  // ======================================================
+  function armarDireccion(calle, numero, ciudad, provincia, cp) {
+    const partes = [];
+    if (calle && calle.trim()) partes.push(calle.trim());
+    if (numero && numero.trim()) partes.push(numero.trim());
+    if (ciudad && ciudad.trim()) partes.push(ciudad.trim());
+    if (provincia && provincia.trim()) partes.push(provincia.trim());
+    if (cp && cp.trim()) partes.push(cp.trim());
+    return partes.join(", ");
+  }
 
-    const btnActualizarMapa = document.getElementById("btnActualizarMapa");
-    const mapContainer = document.getElementById("mapContainer");
+  // ======================================================
+  // FUNCIÓN COMPARTIDA: crea/actualiza iframe en un contenedor
+  // (se usa en "Nuevo alquiler")
+  // ======================================================
+  function actualizarMapaEnContainer(container, direccionCompleta) {
+    if (!container || !direccionCompleta) return;
 
-    function armarDireccionCompleta() {
-        const partes = [];
+    const url = `https://www.google.com/maps?q=${encodeURIComponent(
+      direccionCompleta
+    )}&z=16&output=embed`;
 
-        if (direccionInput.value.trim()) partes.push(direccionInput.value.trim());
-        if (ciudadInput.value.trim()) partes.push(ciudadInput.value.trim());
-        if (provinciaInput.value.trim()) partes.push(provinciaInput.value.trim());
-        if (cpInput.value.trim()) partes.push(cpInput.value.trim());
+    let iframe = container.querySelector("iframe");
 
-        return partes.join(", ");
+    if (!iframe) {
+      iframe = document.createElement("iframe");
+      iframe.width = "100%";
+      iframe.height = "300";
+      iframe.style.border = "0";
+      iframe.loading = "lazy";
+      iframe.referrerPolicy = "no-referrer-when-downgrade";
+      container.appendChild(iframe);
     }
 
-    function actualizarMapa() {
-        const direccionCompleta = armarDireccionCompleta();
-        if (!direccionCompleta) return;
+    iframe.src = url;
+  }
 
-        const url = `https://www.google.com/maps?q=${encodeURIComponent(direccionCompleta)}&z=16&output=embed`;
+  // ======================================================
+  // 1) NUEVO ALQUILER (checkout.html)
+  // ======================================================
+  const calleInput = document.getElementById("calle");
+  const numeroInput = document.getElementById("numero");
+  const ciudadInput = document.getElementById("ciudad");
+  const provinciaInput = document.getElementById("provincia");
+  const cpInput = document.getElementById("cp");
+  const btnActualizarMapa = document.getElementById("btnActualizarMapa");
+  const mapContainer = document.getElementById("mapContainer");
 
-        let iframe = mapContainer.querySelector("iframe");
+  function actualizarMapaNuevoAlquiler() {
+    // Si no estamos en esta pantalla, corto
+    if (!mapContainer || !calleInput) return;
 
-        // Crear iframe si no existe
-        if (!iframe) {
-            iframe = document.createElement("iframe");
-            iframe.width = "100%";
-            iframe.height = "300";
-            iframe.style.border = "0";
-            iframe.loading = "lazy";
-            iframe.referrerPolicy = "no-referrer-when-downgrade";
-            mapContainer.appendChild(iframe);
-        }
+    const direccionCompleta = armarDireccion(
+      calleInput.value,
+      numeroInput?.value,
+      ciudadInput?.value,
+      provinciaInput?.value,
+      cpInput?.value
+    );
 
-        iframe.src = url;
-    }
+    if (!direccionCompleta) return;
 
-    // Click en el botón
-    btnActualizarMapa.addEventListener("click", actualizarMapa);
+    actualizarMapaEnContainer(mapContainer, direccionCompleta);
+  }
 
-    // Enter en campos de dirección
-    [direccionInput, ciudadInput, provinciaInput, cpInput].forEach(input => {
-        input.addEventListener("keydown", (e) => {
-            if (e.key === "Enter") {
-                e.preventDefault();
-                actualizarMapa();
-            }
-        });
+  if (btnActualizarMapa && mapContainer && calleInput) {
+    btnActualizarMapa.addEventListener("click", (e) => {
+      e.preventDefault();
+      actualizarMapaNuevoAlquiler();
     });
+
+    [calleInput, numeroInput, ciudadInput, provinciaInput, cpInput].forEach(
+      (input) => {
+        if (!input) return;
+        input.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            actualizarMapaNuevoAlquiler();
+          }
+        });
+      }
+    );
+  }
+
+  // ======================================================
+  // 2) EDICIÓN DE ALQUILER (edicionAlquiler.html)
+  // ======================================================
+  const calleEdit = document.getElementById("calleEdit");
+  const numeroEdit = document.getElementById("numeroEdit");
+  const ciudadEdit = document.getElementById("ciudadEdit");
+  const provinciaEdit = document.getElementById("provinciaEdit");
+  const cpEdit = document.getElementById("cpEdit");
+  const btnActualizarEdit = document.querySelector(".btn-actualizar-mapa");
+  const mapFrameEdit = document.getElementById("mapFrame");
+
+  function actualizarMapaEditarAlquiler() {
+    // Si no estamos en esta pantalla, corto
+    if (!calleEdit || !mapFrameEdit) return;
+
+    const direccionCompleta = armarDireccion(
+      calleEdit.value,
+      numeroEdit?.value,
+      ciudadEdit?.value,
+      provinciaEdit?.value,
+      cpEdit?.value
+    );
+
+    if (!direccionCompleta) return;
+
+    const url = `https://www.google.com/maps?q=${encodeURIComponent(
+      direccionCompleta
+    )}&z=16&output=embed`;
+
+    mapFrameEdit.src = url;
+  }
+
+  if (btnActualizarEdit && calleEdit && mapFrameEdit) {
+    btnActualizarEdit.addEventListener("click", (e) => {
+      e.preventDefault();
+      actualizarMapaEditarAlquiler();
+    });
+
+    [calleEdit, numeroEdit, ciudadEdit, provinciaEdit, cpEdit].forEach(
+      (input) => {
+        if (!input) return;
+        input.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            actualizarMapaEditarAlquiler();
+          }
+        });
+      }
+    );
+  }
 });

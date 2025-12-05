@@ -1,32 +1,40 @@
-/* --- LAYOUT PRINCIPAL CHECKOUT --- */
+/* =========================================
+   VARIABLES Y BASE
+========================================= */
 @use "../variables.scss" as *;
 
+/* =========================================
+   RESET INPUT NUMBER (quita flechas)
+========================================= */
 
-/* Quitar flechas en Chrome, Edge, Safari */
+/* Chrome, Edge, Safari */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-/* Quitar flechas en Firefox */
+/* Firefox */
 input[type="number"] {
-  -moz-appearance: textfield;   
+  -moz-appearance: textfield;
 }
 
+/* =========================================
+   LAYOUT PRINCIPAL DEL CHECKOUT
+========================================= */
 .checkout {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   padding: 1.5rem;
-
-
   color: #e5e7eb;
   min-height: 100vh;
   border-radius: $border-radius-main;
 }
 
-/* Columna izquierda */
+/* =========================================
+   COLUMNA IZQUIERDA (CONTENIDO PRINCIPAL)
+========================================= */
 .checkout__content {
   background: #020617;
   border-radius: 16px;
@@ -36,18 +44,22 @@ input[type="number"] {
   gap: 1.5rem;
 }
 
+/* Título principal del checkout */
 .checkout__title {
   font-size: 1.8rem;
   margin: 0;
 }
 
+/* Subtítulo debajo del título principal */
 .checkout__subtitle {
   margin: 0.25rem 0 0.5rem;
   color: #9ca3af;
   font-size: 0.95rem;
 }
 
-/* Secciones internas */
+/* =========================================
+   SECCIONES INTERNAS DEL CHECKOUT
+========================================= */
 .checkout__section {
   background: #0b1120;
   border-radius: 14px;
@@ -56,42 +68,50 @@ input[type="number"] {
   box-shadow: 0 12px 35px rgba(15, 23, 42, 0.35);
 }
 
+/* Título de cada sección */
 .checkout__section-title {
   margin: 0 0 0.8rem;
   font-size: 1.1rem;
   font-weight: 600;
 }
 
-/* Grilla de campos */
+/* =========================================
+   GRID DE CAMPOS DE FORMULARIO
+========================================= */
 .checkout__grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.8rem 1rem;
 }
 
-/* En desktop: 2 columnas */
+/* Grid en desktop (>=768px) */
 @media (min-width: 768px) {
   .checkout__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  /* Grid especial para tarjeta (si se usa) */
   .checkout__grid--card {
     grid-template-columns: 2fr 1fr 1fr;
   }
 }
 
-/* Campos de formulario */
+/* =========================================
+   CAMPOS DE FORMULARIO (.field)
+========================================= */
 .field {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
 }
 
+/* Label de los campos */
 .field label {
   font-size: 0.85rem;
   color: #9ca3af;
 }
 
+/* Inputs dentro de .field */
 .field input {
   padding: 0.6rem 0.75rem;
   border-radius: 10px;
@@ -113,26 +133,31 @@ input[type="number"] {
   }
 }
 
-/* Input con botón (DNI) – versión simple */
+/* =========================================
+   INPUT + BOTÓN EN LÍNEA (DNI)
+========================================= */
 .input-group {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
 }
 
+/* Label del grupo de input DNI */
 .input-group label {
   font-size: 0.85rem;
   color: #9ca3af;
 }
 
+/* Wrapper del input + botón (posición relativa) */
 .input-group > div {
   position: relative;
 }
 
+/* Input del DNI con espacio para el botón */
 .input-group input {
   width: 100%;
   padding: 0.6rem 0.75rem;
-  padding-right: 80px; /* espacio para el botón */
+  padding-right: 80px;
   border-radius: 10px;
   border: 1px solid #374151;
   background: #020617;
@@ -140,7 +165,6 @@ input[type="number"] {
   font-size: 0.95rem;
   outline: none;
   transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-  justify-content: baseline;
 
   &::placeholder {
     color: #6b7280;
@@ -153,6 +177,7 @@ input[type="number"] {
   }
 }
 
+/* Botón inline del DNI ("Buscar") */
 .btn-inline {
   position: absolute;
   right: 6px;
@@ -173,7 +198,9 @@ input[type="number"] {
   }
 }
 
-/* Opciones de pago */
+/* =========================================
+   OPCIONES DE PAGO (RADIOS)
+========================================= */
 .payment-options {
   display: flex;
   flex-direction: column;
@@ -181,6 +208,7 @@ input[type="number"] {
   margin-bottom: 1rem;
 }
 
+/* Cada opción de pago */
 .payment-option {
   display: flex;
   align-items: center;
@@ -203,7 +231,9 @@ input[type="number"] {
   }
 }
 
-/* Acciones (botones) */
+/* =========================================
+   ACCIONES DEL CHECKOUT (BOTONES FINALES)
+========================================= */
 .checkout__actions {
   display: flex;
   flex-direction: column;
@@ -211,6 +241,7 @@ input[type="number"] {
   margin-top: 0.5rem;
 }
 
+/* Botón principal "Confirmar alquiler" */
 .checkout__btn-confirm {
   border: none;
   border-radius: 12px;
@@ -235,6 +266,7 @@ input[type="number"] {
   }
 }
 
+/* Botón secundario "Cancelar alquiler" (link) */
 .checkout__btn-secondary {
   display: inline-flex;
   justify-content: center;
@@ -255,7 +287,9 @@ input[type="number"] {
   }
 }
 
-/* --- ASIDE RESUMEN --- */
+/* =========================================
+   ASIDE RESUMEN DEL PEDIDO
+========================================= */
 .checkout-summary {
   background: #020617;
   border-radius: 16px;
@@ -267,12 +301,13 @@ input[type="number"] {
   gap: 1rem;
 }
 
+/* Título del resumen */
 .checkout-summary__title {
   margin: 0;
   font-size: 1.2rem;
 }
 
-/* Items */
+/* Lista de items (cliente, dirección, etc.) */
 .checkout-summary__items {
   display: flex;
   flex-direction: column;
@@ -282,6 +317,7 @@ input[type="number"] {
   border-bottom: 1px solid #1f2937;
 }
 
+/* Fila de ítem individual del resumen */
 .summary-item {
   display: flex;
   justify-content: space-between;
@@ -305,7 +341,7 @@ input[type="number"] {
   font-size: 0.95rem;
 }
 
-/* Líneas de subtotal/envío */
+/* Líneas de subtotal, envío, etc. */
 .checkout-summary__line {
   display: flex;
   justify-content: space-between;
@@ -313,6 +349,7 @@ input[type="number"] {
   color: #e5e7eb;
 }
 
+/* Total final */
 .checkout-summary__total {
   display: flex;
   justify-content: space-between;
@@ -321,38 +358,20 @@ input[type="number"] {
   margin-top: 0.25rem;
 }
 
+/* Nota al pie del resumen (si se usa) */
 .checkout-summary__note {
   margin: 0.5rem 0 0;
   font-size: 0.8rem;
   color: #9ca3af;
 }
 
-/* --- LAYOUT DESKTOP: 2 columnas --- */
+/* =========================================
+   LAYOUT DESKTOP (2 COLUMNAS)
+========================================= */
 @media (min-width: 900px) {
   .checkout {
     flex-direction: row;
     align-items: flex-start;
-    .field-inline {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-}
-
-.btn-inline-map {
-  padding: 0.45rem 0.9rem;
-  border-radius: 8px;
-  background: $primary;
-  color: $blanco;
-  border: none;
-  cursor: pointer;
-  font-size: 0.85rem;
-  white-space: nowrap;
-  transition: 0.2s ease;
-
-  &:hover {
-    background: darken($primary, 7%);
-  }
-}
   }
 
   .checkout__content {
@@ -364,4 +383,43 @@ input[type="number"] {
     position: sticky;
     top: 1.5rem;
   }
+}
+
+/* =========================================
+   CONTENEDOR CALLE + NÚMERO (EN LÍNEA)
+========================================= */
+.field-inline {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+/* =========================================
+   BOTÓN "ACTUALIZAR UBICACIÓN" DEBAJO
+========================================= */
+.btn-map-below {
+  margin-top: 0.6rem;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background: $primary;
+  color: $blanco;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+
+  &:hover {
+    background: darken($primary, 7%);
+  }
+}
+
+/* =========================================
+   CONTENEDOR DEL MAPA DINÁMICO
+========================================= */
+.checkout__map-container {
+  margin-top: 1rem;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #1f2937;
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.55);
 }

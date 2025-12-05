@@ -553,19 +553,27 @@ body {
     max-height: fit-content;
   }
 }
-/* --- LAYOUT PRINCIPAL CHECKOUT --- */
-/* Quitar flechas en Chrome, Edge, Safari */
+/* =========================================
+   VARIABLES Y BASE
+========================================= */
+/* =========================================
+   RESET INPUT NUMBER (quita flechas)
+========================================= */
+/* Chrome, Edge, Safari */
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-/* Quitar flechas en Firefox */
+/* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
 }
 
+/* =========================================
+   LAYOUT PRINCIPAL DEL CHECKOUT
+========================================= */
 .checkout {
   display: flex;
   flex-direction: column;
@@ -576,7 +584,9 @@ input[type=number] {
   border-radius: 16px;
 }
 
-/* Columna izquierda */
+/* =========================================
+   COLUMNA IZQUIERDA (CONTENIDO PRINCIPAL)
+========================================= */
 .checkout__content {
   background: #020617;
   border-radius: 16px;
@@ -586,18 +596,22 @@ input[type=number] {
   gap: 1.5rem;
 }
 
+/* Título principal del checkout */
 .checkout__title {
   font-size: 1.8rem;
   margin: 0;
 }
 
+/* Subtítulo debajo del título principal */
 .checkout__subtitle {
   margin: 0.25rem 0 0.5rem;
   color: #9ca3af;
   font-size: 0.95rem;
 }
 
-/* Secciones internas */
+/* =========================================
+   SECCIONES INTERNAS DEL CHECKOUT
+========================================= */
 .checkout__section {
   background: #0b1120;
   border-radius: 14px;
@@ -606,40 +620,48 @@ input[type=number] {
   box-shadow: 0 12px 35px rgba(15, 23, 42, 0.35);
 }
 
+/* Título de cada sección */
 .checkout__section-title {
   margin: 0 0 0.8rem;
   font-size: 1.1rem;
   font-weight: 600;
 }
 
-/* Grilla de campos */
+/* =========================================
+   GRID DE CAMPOS DE FORMULARIO
+========================================= */
 .checkout__grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.8rem 1rem;
 }
 
-/* En desktop: 2 columnas */
+/* Grid en desktop (>=768px) */
 @media (min-width: 768px) {
   .checkout__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  /* Grid especial para tarjeta (si se usa) */
   .checkout__grid--card {
     grid-template-columns: 2fr 1fr 1fr;
   }
 }
-/* Campos de formulario */
+/* =========================================
+   CAMPOS DE FORMULARIO (.field)
+========================================= */
 .field {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
 }
 
+/* Label de los campos */
 .field label {
   font-size: 0.85rem;
   color: #9ca3af;
 }
 
+/* Inputs dentro de .field */
 .field input {
   padding: 0.6rem 0.75rem;
   border-radius: 10px;
@@ -659,26 +681,31 @@ input[type=number] {
   background: #020617;
 }
 
-/* Input con botón (DNI) – versión simple */
+/* =========================================
+   INPUT + BOTÓN EN LÍNEA (DNI)
+========================================= */
 .input-group {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
 }
 
+/* Label del grupo de input DNI */
 .input-group label {
   font-size: 0.85rem;
   color: #9ca3af;
 }
 
+/* Wrapper del input + botón (posición relativa) */
 .input-group > div {
   position: relative;
 }
 
+/* Input del DNI con espacio para el botón */
 .input-group input {
   width: 100%;
   padding: 0.6rem 0.75rem;
-  padding-right: 80px; /* espacio para el botón */
+  padding-right: 80px;
   border-radius: 10px;
   border: 1px solid #374151;
   background: #020617;
@@ -686,7 +713,6 @@ input[type=number] {
   font-size: 0.95rem;
   outline: none;
   transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-  justify-content: baseline;
 }
 .input-group input::placeholder {
   color: #6b7280;
@@ -697,6 +723,7 @@ input[type=number] {
   background: #020617;
 }
 
+/* Botón inline del DNI ("Buscar") */
 .btn-inline {
   position: absolute;
   right: 6px;
@@ -716,7 +743,9 @@ input[type=number] {
   background: #1d4ed8;
 }
 
-/* Opciones de pago */
+/* =========================================
+   OPCIONES DE PAGO (RADIOS)
+========================================= */
 .payment-options {
   display: flex;
   flex-direction: column;
@@ -724,6 +753,7 @@ input[type=number] {
   margin-bottom: 1rem;
 }
 
+/* Cada opción de pago */
 .payment-option {
   display: flex;
   align-items: center;
@@ -744,7 +774,9 @@ input[type=number] {
   background: #020617;
 }
 
-/* Acciones (botones) */
+/* =========================================
+   ACCIONES DEL CHECKOUT (BOTONES FINALES)
+========================================= */
 .checkout__actions {
   display: flex;
   flex-direction: column;
@@ -752,6 +784,7 @@ input[type=number] {
   margin-top: 0.5rem;
 }
 
+/* Botón principal "Confirmar alquiler" */
 .checkout__btn-confirm {
   border: none;
   border-radius: 12px;
@@ -774,6 +807,7 @@ input[type=number] {
   box-shadow: 0 10px 35px rgba(15, 23, 42, 0.7);
 }
 
+/* Botón secundario "Cancelar alquiler" (link) */
 .checkout__btn-secondary {
   display: inline-flex;
   justify-content: center;
@@ -793,7 +827,9 @@ input[type=number] {
   border-color: #4b5563;
 }
 
-/* --- ASIDE RESUMEN --- */
+/* =========================================
+   ASIDE RESUMEN DEL PEDIDO
+========================================= */
 .checkout-summary {
   background: #020617;
   border-radius: 16px;
@@ -805,12 +841,13 @@ input[type=number] {
   gap: 1rem;
 }
 
+/* Título del resumen */
 .checkout-summary__title {
   margin: 0;
   font-size: 1.2rem;
 }
 
-/* Items */
+/* Lista de items (cliente, dirección, etc.) */
 .checkout-summary__items {
   display: flex;
   flex-direction: column;
@@ -820,6 +857,7 @@ input[type=number] {
   border-bottom: 1px solid #1f2937;
 }
 
+/* Fila de ítem individual del resumen */
 .summary-item {
   display: flex;
   justify-content: space-between;
@@ -843,7 +881,7 @@ input[type=number] {
   font-size: 0.95rem;
 }
 
-/* Líneas de subtotal/envío */
+/* Líneas de subtotal, envío, etc. */
 .checkout-summary__line {
   display: flex;
   justify-content: space-between;
@@ -851,6 +889,7 @@ input[type=number] {
   color: #e5e7eb;
 }
 
+/* Total final */
 .checkout-summary__total {
   display: flex;
   justify-content: space-between;
@@ -859,36 +898,20 @@ input[type=number] {
   margin-top: 0.25rem;
 }
 
+/* Nota al pie del resumen (si se usa) */
 .checkout-summary__note {
   margin: 0.5rem 0 0;
   font-size: 0.8rem;
   color: #9ca3af;
 }
 
-/* --- LAYOUT DESKTOP: 2 columnas --- */
+/* =========================================
+   LAYOUT DESKTOP (2 COLUMNAS)
+========================================= */
 @media (min-width: 900px) {
   .checkout {
     flex-direction: row;
     align-items: flex-start;
-  }
-  .checkout .field-inline {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-  }
-  .checkout .btn-inline-map {
-    padding: 0.45rem 0.9rem;
-    border-radius: 8px;
-    background: #2563eb;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-    font-size: 0.85rem;
-    white-space: nowrap;
-    transition: 0.2s ease;
-  }
-  .checkout .btn-inline-map:hover {
-    background: rgb(19.8571428571, 81.4142857143, 216.4428571429);
   }
   .checkout__content {
     flex: 2;
@@ -899,6 +922,44 @@ input[type=number] {
     top: 1.5rem;
   }
 }
+/* =========================================
+   CONTENEDOR CALLE + NÚMERO (EN LÍNEA)
+========================================= */
+.field-inline {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+/* =========================================
+   BOTÓN "ACTUALIZAR UBICACIÓN" DEBAJO
+========================================= */
+.btn-map-below {
+  margin-top: 0.6rem;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.btn-map-below:hover {
+  background: rgb(19.8571428571, 81.4142857143, 216.4428571429);
+}
+
+/* =========================================
+   CONTENEDOR DEL MAPA DINÁMICO
+========================================= */
+.checkout__map-container {
+  margin-top: 1rem;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #1f2937;
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.55);
+}
+
 .estado-pill {
   display: inline-block;
   padding: 0.25rem 0.5rem;
@@ -2891,6 +2952,8 @@ input::placeholder {
   cursor: pointer;
   transition: transform 0.1s ease, box-shadow 0.15s ease, filter 0.15s ease;
   box-shadow: 0 15px 45px rgba(37, 99, 235, 0.55);
+  text-decoration: none;
+  text-align: center;
 }
 .checkout__btn-confirm:hover {
   filter: brightness(1.05);
@@ -3008,9 +3071,9 @@ input::placeholder {
     top: 1.5rem;
   }
 }
-/* ----------------------------------------------
+/* =========================================
    LAYOUT GENERAL
----------------------------------------------- */
+========================================= */
 .contenedores-home {
   width: 100%;
   min-height: 100vh;
@@ -3020,76 +3083,70 @@ input::placeholder {
   background: #0b1120;
 }
 
-/* PANEL CONTENEDOR */
 .contenedor-panel {
   width: 100%;
   max-width: 1100px;
-  margin: 0 auto;
   padding: 16px 20px 20px;
   border-radius: 16px;
   background: #0b1120;
   border: 1px solid rgba(148, 163, 184, 0.4);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
 }
-/* ----------------------------------------------
-   HEADER (TÍTULO + BOTÓN)
----------------------------------------------- */
+
+/* =========================================
+   HEADER (Título + botón Volver)
+========================================= */
 .detalle-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1.5rem;
-  gap: 1rem;
 }
 .detalle-header h1 {
   font-size: 1.6rem;
-  color: #ffffff;
   margin: 0;
+  color: #ffffff;
 }
 .detalle-header .btnHead {
   padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 999px;
   background: #2563eb;
   color: #ffffff;
+  border-radius: 10px;
+  border: none;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
-  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+  transition: 0.2s;
 }
 .detalle-header .btnHead:hover {
-  background: rgb(20.7142857143, 84.9285714286, 225.7857142857);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.6);
+  background: rgb(20.2857142857, 83.1714285714, 221.1142857143);
 }
 
-/* ----------------------------------------------
-   GRID PRINCIPAL
----------------------------------------------- */
+/* =========================================
+   GRID PRINCIPAL (secciones internas)
+========================================= */
 .detalle-grid {
   display: grid;
-  gap: 1.1rem;
   grid-template-columns: repeat(3, 1fr);
-  margin-bottom: 1.5rem;
+  gap: 1.2rem;
 }
 @media (max-width: 900px) {
   .detalle-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (max-width: 640px) {
+@media (max-width: 600px) {
   .detalle-grid {
     grid-template-columns: 1fr;
   }
 }
 
-/* ----------------------------------------------
-   CAJAS DE INFORMACIÓN
----------------------------------------------- */
+/* =========================================
+   BOXES INTERNAS
+========================================= */
 .detalle-box {
   background: #111827;
-  border-radius: 12px;
   padding: 1rem 1.2rem;
+  border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
   border: 1px solid rgba(148, 163, 184, 0.4);
   color: #e5e7eb;
@@ -3100,146 +3157,134 @@ input::placeholder {
   font-weight: 600;
   color: #ffffff;
 }
-.detalle-box p {
-  margin: 0.25rem 0;
-}
-.detalle-box p strong {
-  color: #9ca3af;
-  font-weight: 500;
-}
 
-/* ----------------------------------------------
-   INPUTS, SELECTS, TEXTAREAS (MISMO ESTILO)
----------------------------------------------- */
 .detalle-box input,
 .detalle-box select,
 .detalle-box textarea {
   width: 100%;
-  padding: 0.55rem 0.75rem;
+  padding: 0.6rem 0.75rem;
+  margin-bottom: 0.7rem;
   border-radius: 10px;
-  background: #0b1120;
   border: 1px solid rgba(148, 163, 184, 0.4);
+  background: #0b1120;
   color: #ffffff;
-  font-size: 0.9rem;
-  margin-bottom: 0.65rem;
-  resize: none;
-  transition: border-color 0.2s ease, box-shadow 0.1s ease;
+  transition: 0.2s;
 }
 .detalle-box input:focus,
 .detalle-box select:focus,
 .detalle-box textarea:focus {
-  outline: none;
   border-color: #2563eb;
   box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.5);
-}
-.detalle-box input:disabled,
-.detalle-box select:disabled,
-.detalle-box textarea:disabled {
-  opacity: 0.6;
+  outline: none;
 }
 
 textarea {
-  min-height: 120px;
+  resize: none;
+  min-height: 100px;
 }
 
-/* ----------------------------------------------
-   FOOTER DE INFORMACIÓN
----------------------------------------------- */
+/* =========================================
+   BOX FULL WIDTH (para Ubicación)
+========================================= */
+.detalle-box--full {
+  grid-column: 1/-1;
+}
+
+/* =========================================
+   MAPA
+========================================= */
+.map-wrapper-edit {
+  width: 100%;
+  margin-top: 0.7rem;
+  border-radius: 12px;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.55);
+}
+
+.map-iframe-edit {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.btn-actualizar-mapa {
+  margin-top: 0.8rem;
+  padding: 0.55rem 1rem;
+  background: #2563eb;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn-actualizar-mapa:hover {
+  background: rgb(20.7142857143, 84.9285714286, 225.7857142857);
+}
+
+/* =========================================
+   FOOTER DE LA BOX
+========================================= */
 .detalle-footer {
-  padding-top: 0.75rem;
+  margin-top: 1rem;
+  padding-top: 0.6rem;
   border-top: 1px dashed rgba(148, 163, 184, 0.5);
-  margin-top: 0.5rem;
+  text-align: right;
 }
 .detalle-footer p {
-  text-align: right;
   margin: 0;
   font-size: 0.8rem;
   color: #9ca3af;
 }
 
-/* ----------------------------------------------
-   ACCIONES: GUARDAR, CANCELAR, IMPRIMIR
----------------------------------------------- */
+/* =========================================
+   ACCIONES FINALES
+========================================= */
 .detalle-actions {
-  margin-top: 1.2rem;
   display: flex;
-  align-items: center;
   justify-content: flex-end;
-  gap: 0.75rem;
+  gap: 0.7rem;
   flex-wrap: wrap;
+  margin-top: 1rem;
 }
-.detalle-actions a,
-.detalle-actions button {
-  font-size: 0.9rem;
+.detalle-actions .btn-secundario,
+.detalle-actions .btn-primario,
+.detalle-actions .btn-imprimir {
+  padding: 0.55rem 1.2rem;
+  border-radius: 10px;
   cursor: pointer;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-.detalle-actions {
-  /* Botón secundario */
+  transition: 0.2s;
 }
 .detalle-actions .btn-secundario {
-  padding: 0.5rem 1.1rem;
-  border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.6);
   background: transparent;
-  color: #e5e7eb;
-  transition: 0.2s ease;
+  color: #ffffff;
 }
 .detalle-actions .btn-secundario:hover {
-  background: rgba(15, 23, 42, 0.9);
-  border-color: #ffffff;
-}
-.detalle-actions {
-  /* Botón primario */
+  background: rgba(148, 163, 184, 0.1);
 }
 .detalle-actions .btn-primario {
-  padding: 0.5rem 1.3rem;
-  border-radius: 999px;
   border: none;
   background: #2563eb;
   color: #ffffff;
   font-weight: 600;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
-  transition: 0.2s ease;
 }
 .detalle-actions .btn-primario:hover {
   background: rgb(20.2857142857, 83.1714285714, 221.1142857143);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.6);
-}
-.detalle-actions {
-  /* Botón imprimir */
 }
 .detalle-actions .btn-imprimir {
-  padding: 0.5rem 1.2rem;
-  border-radius: 999px;
-  border: 1px dashed rgba(148, 163, 184, 0.7);
+  border: 1px dashed rgba(148, 163, 184, 0.6);
   background: transparent;
   color: #9ca3af;
-  font-size: 0.85rem;
 }
 .detalle-actions .btn-imprimir:hover {
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(148, 163, 184, 0.1);
   border-style: solid;
   color: #ffffff;
-}
-
-/* ----------------------------------------------
-   RESPONSIVE ACCIONES
----------------------------------------------- */
-@media (max-width: 640px) {
-  .detalle-actions {
-    justify-content: flex-start;
-  }
-  .detalle-actions .btn-primario,
-  .detalle-actions .btn-secundario,
-  .detalle-actions .btn-imprimir {
-    width: 100%;
-    justify-content: center;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */

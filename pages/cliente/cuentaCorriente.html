@@ -30,12 +30,19 @@
             <div id="divHeader-clientes">
                 <h2 class="clientes-panel__title">Cuentas corrientes</h2>
 
+                <div class="input-group">
+                    <div>
+                        <input type="number" id="dniFormClient" placeholder="Cliente">
+                        <button class="btn-inline">Buscar</button>
+                    </div>
+                </div>
                 <select class="filtroClientes">
                     <option value="" disabled selected>Filtrar por estado</option>
                     <option value="al-dia">Al día</option>
                     <option value="con-deuda">Con deuda</option>
                     <option value="mora">En mora</option>
                 </select>
+
 
                 <button id="btnFiltrarCuentas">Filtrar</button>
             </div>
@@ -53,75 +60,75 @@
                 </thead>
 
                 <tbody>
-    <!-- EJEMPLO 1 -->
-    <tr>
-        <td>1</td>
-        <td>Juan Pérez</td>
-        <td>$ 0</td>
-        <td>15/11/2025</td>
-        <td><span class="estado-pill estado-activo">Al día</span></td>
-        <td class="acciones">
+                    <!-- EJEMPLO 1 -->
+                    <tr>
+                        <td>1</td>
+                        <td>Juan Pérez</td>
+                        <td>$ 0</td>
+                        <td>15/11/2025</td>
+                        <td><span class="estado-pill estado-activo">Al día</span></td>
+                        <td class="acciones">
 
-            <!-- 🔍 NUEVO BOTÓN VER DETALLE -->
-            <a href="./cuentaClienteDetalle.html" class="btn-accion ver" title="Ver detalle" 
-                target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-eye"></i>
-            </a>
+                            <!-- 🔍 NUEVO BOTÓN VER DETALLE -->
+                            <a href="./cuentaClienteDetalle.html" class="btn-accion ver" title="Ver detalle"
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
 
-            <!-- 💵 REGISTRAR PAGO -->
-            <a href="./pagosCliente.html" class="btn-accion editar" title="Registrar pago">
-                <i class="fa-solid fa-money-bill-wave"></i>
-            </a>
+                            <!-- 💵 REGISTRAR PAGO -->
+                            <a href="./pagosCliente.html" class="btn-accion editar" title="Registrar pago">
+                                <i class="fa-solid fa-money-bill-wave"></i>
+                            </a>
 
-        </td>
-    </tr>
+                        </td>
+                    </tr>
 
-    <!-- EJEMPLO 2 -->
-    <tr>
-        <td>2</td>
-        <td>María Gómez</td>
-        <td>$ 85.000</td>
-        <td>28/11/2025</td>
-        <td><span class="estado-pill estado-inactivo">Con deuda</span></td>
-        <td class="acciones">
+                    <!-- EJEMPLO 2 -->
+                    <tr>
+                        <td>2</td>
+                        <td>María Gómez</td>
+                        <td>$ 85.000</td>
+                        <td>28/11/2025</td>
+                        <td><span class="estado-pill estado-inactivo">Con deuda</span></td>
+                        <td class="acciones">
 
-            <!-- 🔍 VER DETALLE -->
-            <a href="./detalleCuenta.html?id=2" class="btn-accion ver" title="Ver detalle" 
-                target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-eye"></i>
-            </a>
+                            <!-- 🔍 VER DETALLE -->
+                            <a href="./detalleCuenta.html?id=2" class="btn-accion ver" title="Ver detalle"
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
 
-            <!-- 💵 REGISTRAR PAGO -->
-            <a href="./registrarPago.html?id=2" class="btn-accion editar" title="Registrar pago">
-                <i class="fa-solid fa-money-bill-wave"></i>
-            </a>
+                            <!-- 💵 REGISTRAR PAGO -->
+                            <a href="./registrarPago.html?id=2" class="btn-accion editar" title="Registrar pago">
+                                <i class="fa-solid fa-money-bill-wave"></i>
+                            </a>
 
-        </td>
-    </tr>
+                        </td>
+                    </tr>
 
-    <!-- EJEMPLO 3 -->
-    <tr>
-        <td>3</td>
-        <td>Carlos Ruiz</td>
-        <td>$ 150.000</td>
-        <td>05/11/2025</td>
-        <td><span class="estado-pill estado-inactivo">En mora</span></td>
-        <td class="acciones">
+                    <!-- EJEMPLO 3 -->
+                    <tr>
+                        <td>3</td>
+                        <td>Carlos Ruiz</td>
+                        <td>$ 150.000</td>
+                        <td>05/11/2025</td>
+                        <td><span class="estado-pill estado-inactivo">En mora</span></td>
+                        <td class="acciones">
 
-            <!-- 🔍 VER DETALLE -->
-            <a href="./detalleCuenta.html?id=3" class="btn-accion ver" title="Ver detalle" 
-                target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-eye"></i>
-            </a>
+                            <!-- 🔍 VER DETALLE -->
+                            <a href="./detalleCuenta.html?id=3" class="btn-accion ver" title="Ver detalle"
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
 
-            <!-- 💵 REGISTRAR PAGO -->
-            <a href="./registrarPago.html?id=3" class="btn-accion editar" title="Registrar pago">
-                <i class="fa-solid fa-money-bill-wave"></i>
-            </a>
+                            <!-- 💵 REGISTRAR PAGO -->
+                            <a href="./registrarPago.html?id=3" class="btn-accion editar" title="Registrar pago">
+                                <i class="fa-solid fa-money-bill-wave"></i>
+                            </a>
 
-        </td>
-    </tr>
-</tbody>
+                        </td>
+                    </tr>
+                </tbody>
 
             </table>
         </section>
