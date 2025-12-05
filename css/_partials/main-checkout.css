@@ -317,6 +317,25 @@ input[type=number] {
     flex-direction: row;
     align-items: flex-start;
   }
+  .checkout .field-inline {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .checkout .btn-inline-map {
+    padding: 0.45rem 0.9rem;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    transition: 0.2s ease;
+  }
+  .checkout .btn-inline-map:hover {
+    background: rgb(19.8571428571, 81.4142857143, 216.4428571429);
+  }
   .checkout__content {
     flex: 2;
   }

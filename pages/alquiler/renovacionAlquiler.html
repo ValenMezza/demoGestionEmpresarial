@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <title>Nuevo alquiler</title>
+    <title>Renovar Alquiler</title>
 </head>
 
 <body>
@@ -24,51 +24,47 @@
             </ul>
         </nav>
     </header>
-
-    <main class="checkout">
+    <main class="checkout_renovacion">
+        <!-- Paso 1: Datos del cliente -->
         <section class="checkout__content">
-            <h1 class="checkout__title">Nuevo alquiler #12</h1>
+            <h1 class="checkout__title">Renovar alquiler #1221</h1>
             <p class="checkout__subtitle">Completá los datos para procesar el pedido.</p>
 
-            <!-- Datos del cliente -->
+            <!-- Datos de contacto -->
             <section class="checkout__section">
                 <h2 class="checkout__section-title">Datos de cliente</h2>
                 <div class="input-group">
                     <label for="dniFormClient">DNI</label>
                     <div>
-                        <input type="number" id="dniFormClient" placeholder="XX.XXX.XXX">
-                        <button class="btn-inline">Buscar</button>
+                        <input type="number" id="dniFormClient" placeholder="43691688">
+                        <button class="btn-inline" disabled>Buscar</button>
                     </div>
                 </div>
+
+
 
                 <div class="checkout__grid">
                     <div class="field">
                         <label for="nombre">Nombre y apellido</label>
-                        <input type="text" id="nombre" placeholder="Valentino Mezza">
+                        <input type="text" id="nombre" name="nombre" placeholder="Valentino Mezzavilla">
                     </div>
+
 
                     <div class="field">
                         <label for="telefono">Teléfono</label>
-                        <input type="tel" id="telefono" placeholder="+54 9 351 000 0000">
+                        <input type="tel" id="telefono" name="telefono" placeholder="3834923578">
                     </div>
                 </div>
             </section>
 
-            <!-- Dirección -->
             <section class="checkout__section">
                 <h2 class="checkout__section-title">Dirección de entrega</h2>
 
-                <div class="checkout__grid">
 
-                    <!-- DIRECCIÓN + BOTÓN EN LA MISMA FILA -->
-                    <div class="field field--direccion">
+                <div class="checkout__grid">
+                    <div class="field">
                         <label for="direccion">Calle y número</label>
-                        <div class="field-inline">
-                            <input type="text" id="direccion" name="direccion" placeholder="Av. Ejemplo 1234">
-                            <button id="btnActualizarMapa" type="button" class="btn-inline-map">
-                                Actualizar ubicación
-                            </button>
-                        </div>
+                        <input type="text" id="direccion" name="direccion" placeholder="Av. Velez Sarsfield 1234">
                     </div>
 
                     <div class="field">
@@ -90,17 +86,15 @@
                         <label for="fecha-inicio">Fecha de inicio</label>
                         <input type="date" id="fecha-inicio" name="fecha_inicio">
                     </div>
-
                     <div class="field">
-                        <label for="fecha_fin">Fecha de fin</label>
+                        <label for="fecha-inicio">Fecha de fin</label>
                         <input type="date" name="fecha_fin" id="fecha_fin">
                     </div>
+                    <button class="checkout__btn-confirm" type="submit">
+                        Confirmar datos de entrega
+                    </button>
                 </div>
-
-                <!-- CONTENEDOR DEL MAPA -->
-                <div id="mapContainer" class="checkout__map-container"></div>
             </section>
-
 
             <!-- Método de pago -->
             <section class="checkout__section">
@@ -108,22 +102,44 @@
 
                 <div class="payment-options">
                     <label class="payment-option">
-                        <input type="radio" name="metodo_pago" checked>
+                        <input type="radio" name="metodo_pago" value="tarjeta" checked>
                         <span>Tarjeta de crédito / débito</span>
                     </label>
 
                     <label class="payment-option">
-                        <input type="radio" name="metodo_pago">
+                        <input type="radio" name="metodo_pago" value="transferencia">
                         <span>Transferencia bancaria</span>
                     </label>
 
                     <label class="payment-option">
-                        <input type="radio" name="metodo_pago">
+                        <input type="radio" name="metodo_pago" value="efectivo">
                         <span>Efectivo al recibir</span>
                     </label>
+
+                    <label class="payment-option">
+                        <input type="radio" name="metodo_pago" value="ctaCorriete">
+                        <span>Cuenta corriente</span>
+                    </label>
+                </div>
+
+                <!-- Datos de tarjeta (opcional, a nivel diseño) -->
+                <div class="checkout__grid checkout__grid--card">
+                    <!-- <div class="field">
+                        <label for="numero-tarjeta">Número de tarjeta</label>
+                        <input type="text" id="numero-tarjeta" name="numero_tarjeta" placeholder="XXXX XXXX XXXX XXXX">
+                    </div>
+                    <div class="field">
+                        <label for="vencimiento">Vencimiento</label>
+                        <input type="text" id="vencimiento" name="vencimiento" placeholder="MM/AA">
+                    </div>
+                    <div class="field">
+                        <label for="cvv">CVV</label>
+                        <input type="password" id="cvv" name="cvv" placeholder="•••">
+                    </div> -->
                 </div>
             </section>
 
+            <!-- Botón confirmar -->
             <div class="checkout__actions">
                 <button class="checkout__btn-confirm" type="submit">
                     Confirmar alquiler
@@ -132,14 +148,47 @@
             </div>
         </section>
 
+        <!-- Resumen del pedido -->
         <aside class="checkout-summary">
             <h2 class="checkout-summary__title">Resumen del pedido</h2>
-            ...
+
+            <div class="checkout-summary__items">
+                <!-- Acá podrías renderizar desde backend -->
+                <div class="summary-item">
+                    <div>
+                        <p class="summary-item__name">Cliente:</p>
+                    </div>
+                    <p class="summary-item__price">$19.700</p>
+                </div>
+
+                <div class="summary-item">
+                    <div>
+                        <p class="summary-item__name">Dirección:</p>
+                    </div>
+                    <p class="summary-item__price">$8.500</p>
+                </div>
+            </div>
+
+            <div class="checkout-summary__line">
+                <span>Fecha inicio</span>
+                <span>30/11/2025</span>
+            </div>
+            <div class="checkout-summary__line">
+                <span>Fecha inicio</span>
+                <span>08/12/2025</span>
+            </div>
+            <div class="checkout-summary__line">
+                <span>Envío</span>
+                <span>$2.000</span>
+            </div>
+
+            <div class="checkout-summary__total">
+                <span>Total</span>
+                <span>$30.200</span>
+            </div>
+
         </aside>
     </main>
-
-    <!-- 🔥 JS EXTERNO -->
-    <script src="../../js/edicionAlquiler.js"></script>
 
 </body>
 

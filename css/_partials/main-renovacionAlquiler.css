@@ -1,29 +1,33 @@
+@charset "UTF-8";
 /* --- LAYOUT PRINCIPAL CHECKOUT --- */
-@use "../variables.scss" as *;
-
-
 /* Quitar flechas en Chrome, Edge, Safari */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
 /* Quitar flechas en Firefox */
-input[type="number"] {
-  -moz-appearance: textfield;   
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
-.checkout {
+.checkout_renovacion {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   padding: 1.5rem;
-
-
   color: #e5e7eb;
   min-height: 100vh;
-  border-radius: $border-radius-main;
+  border-radius: 16px;
+}
+
+input::-webkit-input-placeholder {
+  color: #ffffff;
+}
+
+input::placeholder {
+  color: #ffffff;
 }
 
 /* Columna izquierda */
@@ -74,12 +78,10 @@ input[type="number"] {
   .checkout__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
   .checkout__grid--card {
     grid-template-columns: 2fr 1fr 1fr;
   }
 }
-
 /* Campos de formulario */
 .field {
   display: flex;
@@ -101,16 +103,14 @@ input[type="number"] {
   font-size: 0.95rem;
   outline: none;
   transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-
-  &::placeholder {
-    color: #6b7280;
-  }
-
-  &:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.4);
-    background: #020617;
-  }
+}
+.field input::placeholder {
+  color: #6b7280;
+}
+.field input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.4);
+  background: #020617;
 }
 
 /* Input con botón (DNI) – versión simple */
@@ -141,16 +141,14 @@ input[type="number"] {
   outline: none;
   transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
   justify-content: baseline;
-
-  &::placeholder {
-    color: #6b7280;
-  }
-
-  &:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.4);
-    background: #020617;
-  }
+}
+.input-group input::placeholder {
+  color: #6b7280;
+}
+.input-group input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.4);
+  background: #020617;
 }
 
 .btn-inline {
@@ -167,10 +165,9 @@ input[type="number"] {
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s ease;
-
-  &:hover {
-    background: #1d4ed8;
-  }
+}
+.btn-inline:hover {
+  background: #1d4ed8;
 }
 
 /* Opciones de pago */
@@ -192,15 +189,13 @@ input[type="number"] {
   cursor: pointer;
   font-size: 0.95rem;
   transition: border-color 0.15s ease, background 0.15s ease;
-
-  input[type="radio"] {
-    accent-color: #2563eb;
-  }
-
-  &:hover {
-    border-color: #2563eb;
-    background: #020617;
-  }
+}
+.payment-option input[type=radio] {
+  accent-color: #2563eb;
+}
+.payment-option:hover {
+  border-color: #2563eb;
+  background: #020617;
 }
 
 /* Acciones (botones) */
@@ -222,17 +217,15 @@ input[type="number"] {
   cursor: pointer;
   transition: transform 0.1s ease, box-shadow 0.15s ease, filter 0.15s ease;
   box-shadow: 0 15px 45px rgba(37, 99, 235, 0.55);
-
-  &:hover {
-    filter: brightness(1.05);
-    transform: translateY(-1px);
-    box-shadow: 0 20px 50px rgba(37, 99, 235, 0.7);
-  }
-
-  &:active {
-    transform: translateY(0);
-    box-shadow: 0 10px 35px rgba(15, 23, 42, 0.7);
-  }
+}
+.checkout__btn-confirm:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+  box-shadow: 0 20px 50px rgba(37, 99, 235, 0.7);
+}
+.checkout__btn-confirm:active {
+  transform: translateY(0);
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.7);
 }
 
 .checkout__btn-secondary {
@@ -248,11 +241,10 @@ input[type="number"] {
   text-decoration: none;
   background: #020617;
   transition: background 0.15s ease, border-color 0.15s ease;
-
-  &:hover {
-    background: #111827;
-    border-color: #4b5563;
-  }
+}
+.checkout__btn-secondary:hover {
+  background: #111827;
+  border-color: #4b5563;
 }
 
 /* --- ASIDE RESUMEN --- */
@@ -329,39 +321,18 @@ input[type="number"] {
 
 /* --- LAYOUT DESKTOP: 2 columnas --- */
 @media (min-width: 900px) {
-  .checkout {
+  .checkout_renovacion {
     flex-direction: row;
     align-items: flex-start;
-    .field-inline {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-}
-
-.btn-inline-map {
-  padding: 0.45rem 0.9rem;
-  border-radius: 8px;
-  background: $primary;
-  color: $blanco;
-  border: none;
-  cursor: pointer;
-  font-size: 0.85rem;
-  white-space: nowrap;
-  transition: 0.2s ease;
-
-  &:hover {
-    background: darken($primary, 7%);
   }
-}
-  }
-
   .checkout__content {
     flex: 2;
   }
-
   .checkout-summary {
     flex: 1;
     position: sticky;
     top: 1.5rem;
   }
 }
+
+/*# sourceMappingURL=main-renovacionAlquiler.css.map */

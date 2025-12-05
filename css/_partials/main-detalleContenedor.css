@@ -183,13 +183,13 @@
     visibility: hidden !important;
   }
   /* 🔥 Muestra solo el contenido del main */
-  #contenedores-home,
-  #contenedores-home * {
+  .contenedores-home,
+  .contenedores-home * {
     visibility: visible !important;
-    color: #0b1120;
+    color: #ffffff;
   }
   /* 🔥 Asegura que el main abarque toda la hoja */
-  #contenedores-home {
+  .contenedores-home {
     position: absolute;
     top: 0;
     left: 0;
@@ -197,7 +197,7 @@
     padding: 0;
     margin: 0;
     background: white; /* si querés imprimir con fondo claro */
-    color: #0b1120;
+    color: #ffffff;
   }
   /* ❌ Ocultar botones (no salen en el PDF) */
   .detalle-actions {

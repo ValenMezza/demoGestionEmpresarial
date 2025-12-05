@@ -34,9 +34,20 @@
                     <option value="" disabled selected>Seleccionar un filtro</option>
                     <option value="1">Alquiler: Activo</option>
                     <option value="2">Alquiler: Finalizado</option>
+                </select>
+                <select id="opciones">
+                    <option value="" disabled selected>Seleccionar un filtro</option>
                     <option value="3">#Alquiler: Mayor - Menor</option>
                     <option value="3">#Alquiler: Menor - Mayor</option>
 
+                </select>
+                <select id="opciones">
+                    <option value="" disabled selected>Seleccionar un filtro</option>
+
+                    <option value="4">Fecha Inicio: Más reciente</option>
+                    <option value="4">Fecha Inicio: Más antigua</option>
+                    <option value="5">Fecha Fin: Más reciente</option>
+                    <option value="5">Fecha Fin: Más antigua</option>
                 </select>
 
                 <button id="btnFiltrar">Filtrar</button>
@@ -60,16 +71,16 @@
                     <tr>
                         <td>1</td>
                         <td>Juan Pérez</td>
-                        <td>San Lorenzo 501</td>
+                        <td>Velez Sarsfield 1234</td>
                         <td>2024-01-15</td>
                         <td>2024-01-20</td>
                         <td><span class="estado-pill estado-activo">Activo</span></td>
                         <td class="acciones">
-                            <a href="/alquiler/1" class="btn-accion ver" title="Ver">
+                            <a href="./detalleAlquiler.html" class="btn-accion ver" title="Ver">
                                 <i class="fa-solid fa-eye"></i>
                             </a>
 
-                            <a href="/alquiler/editar/1" class="btn-accion editar" title="Editar">
+                            <a href="./edicionAlquiler.html" class="btn-accion editar" title="Editar">
                                 <i class="fa-solid fa-pen"></i>
                             </a>
 
@@ -80,8 +91,8 @@
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td>María Gómez</td>
-                        <td>Av. Velez Sarsfield</td>
+                        <td>Valentino Mezzavilla</td>
+                        <td>San lorenzo 501</td>
                         <td>2024-02-01</td>
                         <td>2024-02-10</td>
                         <td><span class="estado-pill estado-inactivo">Finalizado</span></td>
@@ -90,7 +101,7 @@
                                 <i class="fa-solid fa-eye"></i>
                             </a>
 
-                            <a href="/alquiler/editar/1" class="btn-accion editar" title="Editar">
+                            <a href="./edicionAlquiler.html" class="btn-accion editar" title="Editar">
                                 <i class="fa-solid fa-pen"></i>
                             </a>
 

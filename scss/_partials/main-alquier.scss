@@ -181,3 +181,16 @@
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
 }
+
+
+.btnHead {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background: $primary;
+    color: $blanco;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+} 

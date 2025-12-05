@@ -1,0 +1,236 @@
+@charset "UTF-8";
+/* ----------------------------------------------
+   LAYOUT GENERAL
+---------------------------------------------- */
+.contenedores-home {
+  width: 100%;
+  min-height: 100vh;
+  padding: 1.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  background: #0b1120;
+}
+
+/* PANEL CONTENEDOR */
+.contenedor-panel {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 20px 20px;
+  border-radius: 16px;
+  background: #0b1120;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+}
+/* ----------------------------------------------
+   HEADER (TÍTULO + BOTÓN)
+---------------------------------------------- */
+.detalle-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+.detalle-header h1 {
+  font-size: 1.6rem;
+  color: #ffffff;
+  margin: 0;
+}
+.detalle-header .btnHead {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 999px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+}
+.detalle-header .btnHead:hover {
+  background: rgb(20.7142857143, 84.9285714286, 225.7857142857);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.6);
+}
+
+/* ----------------------------------------------
+   GRID PRINCIPAL
+---------------------------------------------- */
+.detalle-grid {
+  display: grid;
+  gap: 1.1rem;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 900px) {
+  .detalle-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .detalle-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ----------------------------------------------
+   CAJAS DE INFORMACIÓN
+---------------------------------------------- */
+.detalle-box {
+  background: #111827;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  color: #e5e7eb;
+}
+.detalle-box h2 {
+  margin: 0 0 0.8rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+.detalle-box p {
+  margin: 0.25rem 0;
+}
+.detalle-box p strong {
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+/* ----------------------------------------------
+   INPUTS, SELECTS, TEXTAREAS (MISMO ESTILO)
+---------------------------------------------- */
+.detalle-box input,
+.detalle-box select,
+.detalle-box textarea {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border-radius: 10px;
+  background: #0b1120;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  color: #ffffff;
+  font-size: 0.9rem;
+  margin-bottom: 0.65rem;
+  resize: none;
+  transition: border-color 0.2s ease, box-shadow 0.1s ease;
+}
+.detalle-box input:focus,
+.detalle-box select:focus,
+.detalle-box textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.5);
+}
+.detalle-box input:disabled,
+.detalle-box select:disabled,
+.detalle-box textarea:disabled {
+  opacity: 0.6;
+}
+
+textarea {
+  min-height: 120px;
+}
+
+/* ----------------------------------------------
+   FOOTER DE INFORMACIÓN
+---------------------------------------------- */
+.detalle-footer {
+  padding-top: 0.75rem;
+  border-top: 1px dashed rgba(148, 163, 184, 0.5);
+  margin-top: 0.5rem;
+}
+.detalle-footer p {
+  text-align: right;
+  margin: 0;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+/* ----------------------------------------------
+   ACCIONES: GUARDAR, CANCELAR, IMPRIMIR
+---------------------------------------------- */
+.detalle-actions {
+  margin-top: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.detalle-actions a,
+.detalle-actions button {
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.detalle-actions {
+  /* Botón secundario */
+}
+.detalle-actions .btn-secundario {
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: transparent;
+  color: #e5e7eb;
+  transition: 0.2s ease;
+}
+.detalle-actions .btn-secundario:hover {
+  background: rgba(15, 23, 42, 0.9);
+  border-color: #ffffff;
+}
+.detalle-actions {
+  /* Botón primario */
+}
+.detalle-actions .btn-primario {
+  padding: 0.5rem 1.3rem;
+  border-radius: 999px;
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+  transition: 0.2s ease;
+}
+.detalle-actions .btn-primario:hover {
+  background: rgb(20.2857142857, 83.1714285714, 221.1142857143);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.6);
+}
+.detalle-actions {
+  /* Botón imprimir */
+}
+.detalle-actions .btn-imprimir {
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  border: 1px dashed rgba(148, 163, 184, 0.7);
+  background: transparent;
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+.detalle-actions .btn-imprimir:hover {
+  background: rgba(15, 23, 42, 0.85);
+  border-style: solid;
+  color: #ffffff;
+}
+
+/* ----------------------------------------------
+   RESPONSIVE ACCIONES
+---------------------------------------------- */
+@media (max-width: 640px) {
+  .detalle-actions {
+    justify-content: flex-start;
+  }
+  .detalle-actions .btn-primario,
+  .detalle-actions .btn-secundario,
+  .detalle-actions .btn-imprimir {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/*# sourceMappingURL=main-edicionAlquier.css.map */

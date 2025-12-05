@@ -1,0 +1,243 @@
+@use "../variables.scss" as *;
+
+/* ----------------------------------------------
+   LAYOUT GENERAL
+---------------------------------------------- */
+.contenedores-home {
+  width: 100%;
+  min-height: 100vh;
+  padding: 1.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  background: $bg-card;
+}
+
+/* PANEL CONTENEDOR */
+.contenedor-panel {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 20px 20px;
+  border-radius: 16px;
+  background: $bg-card;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+
+  &--wide { }
+}
+
+/* ----------------------------------------------
+   HEADER (TÍTULO + BOTÓN)
+---------------------------------------------- */
+.detalle-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+
+  h1 {
+    font-size: 1.6rem;
+    color: $blanco;
+    margin: 0;
+  }
+
+  .btnHead {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 999px;
+    background: $primary;
+    color: $blanco;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+    transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+
+    &:hover {
+      background: darken($primary, 5%);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.6);
+    }
+  }
+}
+
+/* ----------------------------------------------
+   GRID PRINCIPAL
+---------------------------------------------- */
+.detalle-grid {
+  display: grid;
+  gap: 1.1rem;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 1.5rem;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ----------------------------------------------
+   CAJAS DE INFORMACIÓN
+---------------------------------------------- */
+.detalle-box {
+  background: $bg-card-hover;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  color: $text-main;
+
+  h2 {
+    margin: 0 0 0.8rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: $blanco;
+  }
+
+  p {
+    margin: 0.25rem 0;
+
+    strong {
+      color: $text-muted;
+      font-weight: 500;
+    }
+  }
+}
+
+/* ----------------------------------------------
+   INPUTS, SELECTS, TEXTAREAS (MISMO ESTILO)
+---------------------------------------------- */
+.detalle-box input,
+.detalle-box select,
+.detalle-box textarea {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border-radius: 10px;
+  background: $bg-card;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  color: $blanco;
+  font-size: 0.9rem;
+  margin-bottom: 0.65rem;
+  resize: none;
+  transition: border-color 0.2s ease, box-shadow 0.1s ease;
+
+  &:focus {
+    outline: none;
+    border-color: $primary;
+    box-shadow: 0 0 0 1px rgba($primary, 0.5);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+  }
+}
+
+textarea {
+  min-height: 120px;
+}
+
+/* ----------------------------------------------
+   FOOTER DE INFORMACIÓN
+---------------------------------------------- */
+.detalle-footer {
+  padding-top: 0.75rem;
+  border-top: 1px dashed rgba(148, 163, 184, 0.5);
+  margin-top: 0.5rem;
+
+  p {
+    text-align: right;
+    margin: 0;
+    font-size: 0.8rem;
+    color: $text-muted;
+  }
+}
+
+/* ----------------------------------------------
+   ACCIONES: GUARDAR, CANCELAR, IMPRIMIR
+---------------------------------------------- */
+.detalle-actions {
+  margin-top: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+
+  a,
+  button {
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  /* Botón secundario */
+  .btn-secundario {
+    padding: 0.5rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.7);
+    background: transparent;
+    color: $text-main;
+    transition: 0.2s ease;
+
+    &:hover {
+      background: rgba(15, 23, 42, 0.9);
+      border-color: $blanco;
+    }
+  }
+
+  /* Botón primario */
+  .btn-primario {
+    padding: 0.5rem 1.3rem;
+    border-radius: 999px;
+    border: none;
+    background: $primary;
+    color: $blanco;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+    transition: 0.2s ease;
+
+    &:hover {
+      background: darken($primary, 6%);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.6);
+    }
+  }
+
+  /* Botón imprimir */
+  .btn-imprimir {
+    padding: 0.5rem 1.2rem;
+    border-radius: 999px;
+    border: 1px dashed rgba(148, 163, 184, 0.7);
+    background: transparent;
+    color: $text-muted;
+    font-size: 0.85rem;
+
+    &:hover {
+      background: rgba(15, 23, 42, 0.85);
+      border-style: solid;
+      color: $blanco;
+    }
+  }
+}
+
+/* ----------------------------------------------
+   RESPONSIVE ACCIONES
+---------------------------------------------- */
+@media (max-width: 640px) {
+  .detalle-actions {
+    justify-content: flex-start;
+
+    .btn-primario,
+    .btn-secundario,
+    .btn-imprimir {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}

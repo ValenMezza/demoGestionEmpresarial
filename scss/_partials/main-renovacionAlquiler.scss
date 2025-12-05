@@ -14,7 +14,7 @@ input[type="number"] {
   -moz-appearance: textfield;   
 }
 
-.checkout {
+.checkout_renovacion {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -24,8 +24,14 @@ input[type="number"] {
   color: #e5e7eb;
   min-height: 100vh;
   border-radius: $border-radius-main;
-}
 
+}
+input::-webkit-input-placeholder {
+  color: #ffffff;
+}
+input::placeholder {
+  color: #ffffff;
+}
 /* Columna izquierda */
 .checkout__content {
   background: #020617;
@@ -329,30 +335,9 @@ input[type="number"] {
 
 /* --- LAYOUT DESKTOP: 2 columnas --- */
 @media (min-width: 900px) {
-  .checkout {
+  .checkout_renovacion {
     flex-direction: row;
     align-items: flex-start;
-    .field-inline {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-}
-
-.btn-inline-map {
-  padding: 0.45rem 0.9rem;
-  border-radius: 8px;
-  background: $primary;
-  color: $blanco;
-  border: none;
-  cursor: pointer;
-  font-size: 0.85rem;
-  white-space: nowrap;
-  transition: 0.2s ease;
-
-  &:hover {
-    background: darken($primary, 7%);
-  }
-}
   }
 
   .checkout__content {
@@ -364,4 +349,5 @@ input[type="number"] {
     position: sticky;
     top: 1.5rem;
   }
+
 }
