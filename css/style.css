@@ -16,6 +16,13 @@ header {
   align-items: center;
   box-shadow: 0 4px 12px rgba(15, 23, 42, 0.3);
 }
+header nav {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  width: 100%;
+}
 header nav ul {
   display: flex;
   gap: 1.5rem;
@@ -33,6 +40,10 @@ header nav ul li a {
 }
 header nav ul li a:hover {
   color: #1d4ed8;
+}
+
+.link_sesion {
+  margin-left: auto;
 }
 
 * {
@@ -958,6 +969,21 @@ input[type=number] {
   overflow: hidden;
   border: 1px solid #1f2937;
   box-shadow: 0 10px 35px rgba(15, 23, 42, 0.55);
+}
+
+.dni-message {
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+.dni-success {
+  color: #4ade80;
+  font-weight: 600;
+}
+
+.dni-error {
+  color: #f87171;
+  font-weight: 600;
 }
 
 .estado-pill {
@@ -3285,6 +3311,218 @@ textarea {
   background: rgba(148, 163, 184, 0.1);
   border-style: solid;
   color: #ffffff;
+}
+
+/* =========================================
+   BODY LOGIN
+========================================= */
+.login-body {
+  background: #020617;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Work Sans", sans-serif;
+  color: #ffffff;
+}
+
+/* =========================================
+   CONTENEDOR PRINCIPAL
+========================================= */
+.login-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* =========================================
+   CARD DE LOGIN / REGISTRO
+========================================= */
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: #0b1120;
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.55);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Título */
+.login-title {
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* =========================================
+   FORMULARIOS
+========================================= */
+/* Grid interno */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: opacity 0.2s ease;
+}
+
+/* Ocultar formulario */
+.login-form--hidden {
+  display: none;
+}
+
+/* Campos */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.field label {
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+.field input {
+  padding: 0.7rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid #374151;
+  background: #0b1120;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.field input::placeholder {
+  color: #6b7280;
+}
+.field input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.5);
+  outline: none;
+}
+
+/* =========================================
+   BOTÓN LOGIN (PRIMARIO)
+========================================= */
+.btn-login {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #2563eb, rgb(18.5714285714, 76.1428571429, 202.4285714286));
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.45);
+  transition: 0.2s ease;
+}
+.btn-login:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+}
+.btn-login:active {
+  transform: translateY(0);
+}
+
+/* =========================================
+   BOTÓN REGISTRO (SECUNDARIO)
+========================================= */
+.btn-register {
+  width: 100%;
+  padding: 0.85rem;
+  border-radius: 12px;
+  border: 1px solid #374151;
+  background: #0f172a;
+  color: #e5e7eb;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 0.3rem;
+  transition: 0.2s ease;
+}
+.btn-register:hover {
+  background: #1e293b;
+  border-color: #4b5563;
+}
+.btn-register:active {
+  background: #0b1120;
+  transform: translateY(1px);
+}
+
+/* =========================================
+   LINK "CREAR CUENTA" / "YA TENGO CUENTA"
+========================================= */
+.register-link {
+  border: none;
+  background: transparent;
+  color: #2563eb;
+  font-size: 0.9rem;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.2s ease;
+}
+.register-link:hover {
+  color: rgb(83.7142857143, 132.4285714286, 239.2857142857);
+  text-decoration: underline;
+}
+
+/* =========================================
+   MENSAJES DE ERROR
+========================================= */
+.login-error {
+  margin-top: -0.3rem;
+  min-height: 1rem;
+  font-size: 0.85rem;
+  color: #f97373;
+  text-align: left;
+}
+
+/* =========================================
+   ANIMACIONES SUAVES
+========================================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ===============================
+   OJO MOSTRAR / OCULTAR CONTRASEÑA
+================================ */
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.password-wrapper input {
+  width: 100%;
+  padding-right: 2.7rem;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  color: #9ca3af;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.password-toggle:hover {
+  color: #2563eb;
+}
+
+.password-toggle.active {
+  color: #2563eb;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -423,3 +423,20 @@ input[type="number"] {
   border: 1px solid #1f2937;
   box-shadow: 0 10px 35px rgba(15, 23, 42, 0.55);
 }
+.dni-message {
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+.dni-success {
+  color: #4ade80; // verde suave
+  font-weight: 600;
+}
+
+.dni-error {
+  color: #f87171; // rojo suave
+  font-weight: 600;
+}
+
+
+

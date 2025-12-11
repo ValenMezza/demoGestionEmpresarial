@@ -406,4 +406,19 @@ input[type=number] {
   box-shadow: 0 10px 35px rgba(15, 23, 42, 0.55);
 }
 
+.dni-message {
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+.dni-success {
+  color: #4ade80;
+  font-weight: 600;
+}
+
+.dni-error {
+  color: #f87171;
+  font-weight: 600;
+}
+
 /*# sourceMappingURL=main-checkout.css.map */

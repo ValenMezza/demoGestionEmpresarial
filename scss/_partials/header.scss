@@ -18,6 +18,13 @@ header {
 
   box-shadow: 0 4px 12px rgba(15, 23, 42, 0.3);
 
+  nav {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    width: 100%;
+  }
   & nav ul {
     display: flex;
     gap: 1.5rem;
@@ -39,4 +46,7 @@ header {
   & nav ul li a:hover {
     color: $primary-soft;
   }
+}
+.link_sesion{
+  margin-left: auto;
 }

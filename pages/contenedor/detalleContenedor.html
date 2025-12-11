@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Detalle del contenedor</title>
     <link rel="stylesheet" href="../../css/style.css">
 </head>
+
 <body>
-<header>
+    <header>
         <nav>
             <ul>
                 <li><a href="../home.html">Home</a></li>
@@ -17,74 +19,75 @@
                 <li><a href="../cliente/clientes.html">Clientes</a></li>
                 <li><a href="../stock/stock.html">Stock</a></li>
             </ul>
+            <ul class="link_sesion">
+                <li><a href="../../index.html">Cerrar sesión</a></li>
+            </ul>
         </nav>
-</header>
+    </header>
 
-<main id="contenedores-home">
-    <section class="contenedor-panel contenedor-panel--wide">
-        <header class="detalle-header">
-            <h1>Contenedor #2</h1>
-            <p>Detalle completo del alquiler y ubicación</p>
-        </header>
+    <main id="contenedores-home">
+        <section class="contenedor-panel contenedor-panel--wide">
+            <header class="detalle-header">
+                <h1>Contenedor #2</h1>
+                <p>Detalle completo del alquiler y ubicación</p>
+            </header>
 
-        <!-- GRID PRINCIPAL -->
-        <div class="detalle-grid">
+            <!-- GRID PRINCIPAL -->
+            <div class="detalle-grid">
 
-            <!-- DATOS DEL CONTENEDOR -->
-            <section class="detalle-box">
-                <h2>Datos del contenedor</h2>
-                <p><strong>Número:</strong> 2</p>
-                <p><strong>Estado:</strong> No disponible</p>
-                <p><strong>Fecha inicio:</strong> 25/11/2025</p>
-                <p><strong>Fecha fin:</strong> 04/12/2025</p>
-            </section>
+                <!-- DATOS DEL CONTENEDOR -->
+                <section class="detalle-box">
+                    <h2>Datos del contenedor</h2>
+                    <p><strong>Número:</strong> 2</p>
+                    <p><strong>Estado:</strong> No disponible</p>
+                    <p><strong>Fecha inicio:</strong> 25/11/2025</p>
+                    <p><strong>Fecha fin:</strong> 04/12/2025</p>
+                </section>
 
-            <!-- DATOS DEL CLIENTE -->
-            <section class="detalle-box">
-                <h2>Cliente</h2>
-                <p><strong>Nombre:</strong> María Gómez</p>
-                <p><strong>DNI/CUIT:</strong> 27.334.112</p>
-                <p><strong>Teléfono:</strong> 351 7789123</p>
-                <p><strong>Email:</strong> maria.gomez@correo.com</p>
-                <p><strong>Dirección de facturación:</strong> B° Centro – Córdoba</p>
-            </section>
+                <!-- DATOS DEL CLIENTE -->
+                <section class="detalle-box">
+                    <h2>Cliente</h2>
+                    <p><strong>Nombre:</strong> María Gómez</p>
+                    <p><strong>DNI/CUIT:</strong> 27.334.112</p>
+                    <p><strong>Teléfono:</strong> 351 7789123</p>
+                    <p><strong>Email:</strong> maria.gomez@correo.com</p>
+                    <p><strong>Dirección de facturación:</strong> B° Centro – Córdoba</p>
+                </section>
 
-            <!-- MAPA -->
-            <section class="detalle-box detalle-map">
-                <h2>Ubicación del contenedor</h2>
-                <p><strong>Dirección:</strong> Av. Vélez Sarsfield 1234, Córdoba</p>
-                
-                <div class="map-wrapper">
-                    <iframe
-                        class="map-iframe"
-                        loading="lazy"
-                        allowfullscreen
-                        referrerpolicy="no-referrer-when-downgrade"
-                        src="https://www.google.com/maps?q=Av.+Velez+Sarsfield+1234,+Córdoba,+Argentina&z=16&output=embed">
-                    </iframe>
-                </div>
-            </section>
+                <!-- MAPA -->
+                <section class="detalle-box detalle-map">
+                    <h2>Ubicación del contenedor</h2>
+                    <p><strong>Dirección:</strong> Av. Vélez Sarsfield 1234, Córdoba</p>
 
-        </div>
+                    <div class="map-wrapper">
+                        <iframe class="map-iframe" loading="lazy" allowfullscreen
+                            referrerpolicy="no-referrer-when-downgrade"
+                            src="https://www.google.com/maps?q=Av.+Velez+Sarsfield+1234,+Córdoba,+Argentina&z=16&output=embed">
+                        </iframe>
+                    </div>
+                </section>
 
-        <!-- FOOTER -->
-        <footer class="detalle-footer">
-            <p>Última actualización: 30/11/2025</p>
-        </footer>
+            </div>
 
-        <!-- ACCIONES -->
-        <div class="detalle-actions">
-            <a href="./contenedores.html" class="btn-secundario">Volver</a>
-            <a href="./edicionContenedor.html" class="btn-primario">Editar datos</a>
+            <!-- FOOTER -->
+            <footer class="detalle-footer">
+                <p>Última actualización: 30/11/2025</p>
+            </footer>
 
-            <!-- 🔥 NUEVO BOTÓN IMPRIMIR DETALLE -->
-            <button class="btn-imprimir" onclick="window.print()">
-                <i class="fa-solid fa-print"></i> Imprimir detalle
-            </button>
-        </div>
+            <!-- ACCIONES -->
+            <div class="detalle-actions">
+                <a href="./contenedores.html" class="btn-secundario">Volver</a>
+                <a href="./edicionContenedor.html" class="btn-primario">Editar datos</a>
 
-    </section>
-</main>
+                <!-- 🔥 NUEVO BOTÓN IMPRIMIR DETALLE -->
+                <button class="btn-imprimir" onclick="window.print()">
+                    <i class="fa-solid fa-print"></i> Imprimir detalle
+                </button>
+            </div>
+
+        </section>
+    </main>
 
 </body>
+
 </html>

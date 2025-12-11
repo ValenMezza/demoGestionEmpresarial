@@ -5,15 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <title>Finalizar compra</title>
 </head>
 
 <body>
   <header>
     <nav>
-      <ul>
+      <ul class="links_header">
         <li><a href="../home.html">Home</a></li>
         <li><a href="../transacciones/transacciones.html">Transacciones</a></li>
         <li><a href="../venta/ventas.html">Ventas</a></li>
@@ -22,54 +21,63 @@
         <li><a href="../cliente/clientes.html">Clientes</a></li>
         <li><a href="../stock/stock.html">Stock</a></li>
       </ul>
+
+      <ul class="link_sesion">
+        <li><a href="../index.html">Cerrar sesión</a></li>
+      </ul>
     </nav>
   </header>
+
   <main class="checkout">
-    <!-- Paso 1: Datos del cliente -->
+
+    <!-- Columna izquierda -->
     <section class="checkout__content">
       <h1 class="checkout__title">Finalizar compra #12</h1>
       <p class="checkout__subtitle">Completá tus datos para procesar el pedido.</p>
 
-      <!-- Datos de contacto -->
+      <!-- ======================
+           DATOS DE CONTACTO
+      ======================= -->
       <section class="checkout__section">
         <h2 class="checkout__section-title">Datos de cliente</h2>
+
         <div class="input-group">
           <label for="dniFormClient">DNI</label>
           <div>
             <input type="number" id="dniFormClient" placeholder="XX.XXX.XXX">
-            <button class="btn-inline">Buscar</button>
+            <button class="btn-inline" id="btnBuscarDni">Buscar</button>
           </div>
+
+          <p id="dniMessage" class="dni-message"></p>
         </div>
-
-
 
         <div class="checkout__grid">
           <div class="field">
             <label for="nombre">Nombre y apellido</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Valentino Mezza">
+            <input type="text" id="nombre" placeholder="Nombre del cliente">
           </div>
-
 
           <div class="field">
             <label for="telefono">Teléfono</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="+54 9 351 000 0000">
+            <input type="tel" id="telefono" placeholder="+54 9 351 000 0000">
           </div>
         </div>
       </section>
 
-      <!-- Dirección de entrega -->
+      <!-- ======================
+           DIRECCIÓN
+      ======================= -->
       <section class="checkout__section">
         <h2 class="checkout__section-title">Dirección de entrega</h2>
 
-
         <div class="checkout__grid">
-          <!-- Calle + número con botón debajo -->
+
           <div class="field field--direccion">
             <label for="calle">Calle y número</label>
 
             <div class="field-inline">
-              <input type="text" id="calle" name="calle" placeholder="Av. Ejemplo" />
-              <input type="text" id="numero" name="numero" placeholder="1234" class="field-inline__numero" />
+              <input type="text" id="calle" placeholder="Av. Ejemplo">
+              <input type="text" id="numero" class="field-inline__numero" placeholder="1234">
             </div>
 
             <button id="btnActualizarMapa" type="button" class="btn-map-below">
@@ -79,35 +87,37 @@
 
           <div class="field">
             <label for="ciudad">Ciudad</label>
-            <input type="text" id="ciudad" name="ciudad" placeholder="Córdoba" />
+            <input type="text" id="ciudad" placeholder="Córdoba">
           </div>
 
           <div class="field">
             <label for="provincia">Provincia</label>
-            <input type="text" id="provincia" name="provincia" placeholder="Córdoba" />
+            <input type="text" id="provincia" placeholder="Córdoba">
           </div>
 
           <div class="field">
             <label for="cp">Código postal</label>
-            <input type="text" id="cp" name="cp" placeholder="5000" />
+            <input type="text" id="cp" placeholder="5000">
           </div>
 
           <div class="field">
             <label for="fecha-inicio">Fecha de inicio</label>
-            <input type="date" id="fecha-inicio" name="fecha_inicio" />
+            <input type="date" id="fecha-inicio">
           </div>
 
           <div class="field">
             <label for="fecha_fin">Fecha de fin</label>
-            <input type="date" id="fecha_fin" name="fecha_fin" />
+            <input type="date" id="fecha_fin">
           </div>
         </div>
 
-        <!-- MAPA DINÁMICO -->
+        <!-- MAPA -->
         <div id="mapContainer" class="checkout__map-container"></div>
       </section>
 
-      <!-- Método de pago -->
+      <!-- ======================
+           MÉTODO DE PAGO
+      ======================= -->
       <section class="checkout__section">
         <h2 class="checkout__section-title">Método de pago</h2>
 
@@ -126,29 +136,29 @@
             <input type="radio" name="metodo_pago" value="efectivo">
             <span>Efectivo al recibir</span>
           </label>
+
           <label class="payment-option">
             <input type="radio" name="metodo_pago" value="ctaCorriente">
             <span>Cuenta corriente</span>
           </label>
         </div>
-
-
       </section>
 
-      <!-- Botón confirmar -->
+      <!-- BOTONES -->
       <div class="checkout__actions">
-
         <a class="checkout__btn-confirm" href="./ventas.html">Confirmar compra</a>
-        <a href="./ventas.html" class="checkout__btn-secondary">Cancelar compra</a>
+        <a class="checkout__btn-secondary" href="./ventas.html">Cancelar compra</a>
       </div>
     </section>
 
-    <!-- Resumen del pedido -->
+    <!-- ======================
+         RESUMEN
+    ======================= -->
     <aside class="checkout-summary">
       <h2 class="checkout-summary__title">Resumen del pedido</h2>
 
       <div class="checkout-summary__items">
-        <!-- Acá podrías renderizar desde backend -->
+
         <div class="summary-item">
           <div>
             <p class="summary-item__name">Tierra</p>
@@ -164,12 +174,14 @@
           </div>
           <p class="summary-item__price">$8.500</p>
         </div>
+
       </div>
 
       <div class="checkout-summary__line">
         <span>Subtotal</span>
         <span>$28.200</span>
       </div>
+
       <div class="checkout-summary__line">
         <span>Envío</span>
         <span>$2.000</span>
@@ -179,12 +191,15 @@
         <span>Total</span>
         <span>$30.200</span>
       </div>
-
-
     </aside>
+
   </main>
 
+  <!-- JS DEL MAPA -->
   <script src="../../js/edicionAlquiler.js"></script>
+
+  <!-- JS DEL DNI -->
+  <script src="../../js/clientesDni.js"></script>
 
 </body>
 
