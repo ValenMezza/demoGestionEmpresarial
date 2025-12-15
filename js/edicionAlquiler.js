@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ======================================================
-  // FUNCIÓN COMPARTIDA: arma dirección completa
-  // ======================================================
+
   function armarDireccion(calle, numero, ciudad, provincia, cp) {
     const partes = [];
     if (calle && calle.trim()) partes.push(calle.trim());
@@ -12,10 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return partes.join(", ");
   }
 
-  // ======================================================
-  // FUNCIÓN COMPARTIDA: crea/actualiza iframe en un contenedor
-  // (se usa en "Nuevo alquiler")
-  // ======================================================
+
   function actualizarMapaEnContainer(container, direccionCompleta) {
     if (!container || !direccionCompleta) return;
 
@@ -38,9 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     iframe.src = url;
   }
 
-  // ======================================================
-  // 1) NUEVO ALQUILER (checkout.html)
-  // ======================================================
+
   const calleInput = document.getElementById("calle");
   const numeroInput = document.getElementById("numero");
   const ciudadInput = document.getElementById("ciudad");
@@ -50,7 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const mapContainer = document.getElementById("mapContainer");
 
   function actualizarMapaNuevoAlquiler() {
-    // Si no estamos en esta pantalla, corto
     if (!mapContainer || !calleInput) return;
 
     const direccionCompleta = armarDireccion(
@@ -85,9 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   }
 
-  // ======================================================
-  // 2) EDICIÓN DE ALQUILER (edicionAlquiler.html)
-  // ======================================================
+
   const calleEdit = document.getElementById("calleEdit");
   const numeroEdit = document.getElementById("numeroEdit");
   const ciudadEdit = document.getElementById("ciudadEdit");
@@ -97,7 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const mapFrameEdit = document.getElementById("mapFrame");
 
   function actualizarMapaEditarAlquiler() {
-    // Si no estamos en esta pantalla, corto
     if (!calleEdit || !mapFrameEdit) return;
 
     const direccionCompleta = armarDireccion(

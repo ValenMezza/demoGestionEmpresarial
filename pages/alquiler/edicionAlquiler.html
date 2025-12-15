@@ -29,7 +29,6 @@
     <main class="contenedores-home">
         <section class="contenedor-panel contenedor-panel--wide">
 
-            <!-- HEADER -->
             <header class="detalle-header">
                 <h1>Editar alquiler #1</h1>
                 <a href="./detalleAlquiler.html">
@@ -39,10 +38,8 @@
 
             <form action="#" method="post">
 
-                <!-- GRID PRINCIPAL -->
                 <div class="detalle-grid">
 
-                    <!-- DATOS DEL ALQUILER -->
                     <section class="detalle-box">
                         <h2>Datos del alquiler</h2>
 
@@ -70,7 +67,6 @@
                         </select>
                     </section>
 
-                    <!-- FACTURACIÓN -->
                     <section class="detalle-box">
                         <h2>Facturación</h2>
 
@@ -87,7 +83,6 @@
                         <input type="number" id="montoFinal" value="135000" />
                     </section>
 
-                    <!-- CONTACTO DEL CLIENTE -->
                     <section class="detalle-box">
                         <h2>Contacto del cliente</h2>
 
@@ -105,11 +100,9 @@
                             placeholder="Ej: Coordinar entrega con logística, cliente suele pagar a fin de mes."></textarea>
                     </section>
 
-                    <!-- UBICACIÓN DEL CONTENEDOR (IGUAL AL FORM DE NUEVO ALQUILER) -->
                     <section class="detalle-box detalle-box--full">
                         <h2>Ubicación del contenedor</h2>
 
-                        <!-- Calle + número -->
                         <div class="field field--direccion">
                             <label for="calleEdit"><strong>Calle</strong></label>
 
@@ -124,7 +117,6 @@
 
                         </div>
 
-                        <!-- Ciudad / Provincia / CP -->
                         <div class="field">
                             <label for="ciudadEdit"><strong>Ciudad</strong></label>
                             <input type="text" id="ciudadEdit" value="Córdoba" />
@@ -140,7 +132,6 @@
                             <input type="text" id="cpEdit" value="5000" />
                         </div>
 
-                        <!-- Notas de ubicación -->
                         <div class="field">
                             <label for="notasUbicacion"><strong>Notas de ubicación</strong></label>
                             <textarea id="notasUbicacion" rows="4"
@@ -149,7 +140,6 @@
                         <button type="button" class="btn-map-below btn-actualizar-mapa">
                             Actualizar ubicación
                         </button>
-                        <!-- MAPA -->
                         <div class="map-wrapper-edit">
                             <iframe id="mapFrame" class="map-iframe-edit" loading="lazy" allowfullscreen
                                 src="https://www.google.com/maps?q=Av.+Velez+Sarsfield+1234,+Córdoba,+Argentina&z=16&output=embed">
@@ -159,12 +149,10 @@
 
                 </div>
 
-                <!-- FOOTER -->
                 <footer class="detalle-footer">
                     <p>Última modificación: 30/11/2025</p>
                 </footer>
 
-                <!-- ACCIONES -->
                 <div class="detalle-actions">
                     <a href="./alquiler.html" class="btn-secundario">Cancelar</a>
                     <button type="submit" class="btn-primario">Guardar cambios</button>

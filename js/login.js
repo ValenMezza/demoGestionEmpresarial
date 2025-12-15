@@ -1,10 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Clave para guardar el usuario en localStorage
   const STORAGE_KEY = "APP_USER";
 
-  // ==========================
-  // ELEMENTOS LOGIN
-  // ==========================
   const loginForm = document.getElementById("loginForm");
   const usernameInput = document.getElementById("username");
   const passwordInput = document.getElementById("password");
@@ -12,9 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const loginError = document.getElementById("loginError");
   const linkShowRegister = document.getElementById("linkShowRegister");
 
-  // ==========================
-  // ELEMENTOS REGISTRO
-  // ==========================
   const registerForm = document.getElementById("registerForm");
   const newUsernameInput = document.getElementById("newUsername");
   const newPasswordInput = document.getElementById("newPassword");
@@ -23,9 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const registerError = document.getElementById("registerError");
   const linkShowLogin = document.getElementById("linkShowLogin");
 
-  // ==========================
-  // HELPERS
-  // ==========================
+
 
   function mostrarLogin() {
     if (!loginForm || !registerForm) return;
@@ -59,11 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function redirigirHome() {
-    // Ajustá esta ruta si tu home está en otro lado
     window.location.href = "./pages/home.html";
   }
 
-  // Evitar que los forms recarguen la página si se presiona Enter
   if (loginForm) {
     loginForm.addEventListener("submit", (e) => e.preventDefault());
   }
@@ -71,9 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
     registerForm.addEventListener("submit", (e) => e.preventDefault());
   }
 
-  // ==========================
-  // LOGIN: VALIDAR Y REDIRIGIR
-  // ==========================
   if (btnLogin) {
     btnLogin.addEventListener("click", () => {
       const user = usernameInput.value.trim();
@@ -85,13 +71,11 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // 1) Caso admin / admin
       if (user === "admin" && pass === "admin123") {
         redirigirHome();
         return;
       }
 
-      // 2) Caso usuario registrado
       const userGuardado = obtenerUsuarioGuardado();
 
       if (
@@ -106,9 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ==========================
-  // REGISTRO: CREAR CUENTA
-  // ==========================
+
   if (btnRegister) {
     btnRegister.addEventListener("click", () => {
       const newUser = newUsernameInput.value.trim();
@@ -132,10 +114,8 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // Guardar usuario en localStorage
       guardarUsuario(newUser, newPass);
 
-      // Volver al login con el usuario completado
       if (usernameInput && passwordInput) {
         usernameInput.value = newUser;
         passwordInput.value = "";
@@ -146,9 +126,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ==========================
-  // TOGGLES ENTRE LOGIN / REGISTRO
-  // ==========================
   if (linkShowRegister) {
     linkShowRegister.addEventListener("click", () => {
       mostrarRegistro();
@@ -161,16 +138,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Hint si ya hay usuario guardado
   const existente = obtenerUsuarioGuardado();
   if (existente && usernameInput && !usernameInput.value) {
     usernameInput.placeholder = `Ej: ${existente.username}`;
   }
 });
 
-// ===============================
-// MOSTRAR / OCULTAR CONTRASEÑA
-// ===============================
+
+
 document.querySelectorAll(".password-toggle").forEach(icon => {
     icon.addEventListener("click", () => {
         const inputId = icon.dataset.target;

@@ -1,6 +1,3 @@
-// =====================================
-//   AUTOCOMPLETADO DE CLIENTE POR DNI
-// =====================================
 
 document.addEventListener("DOMContentLoaded", () => {
     const dniInput = document.getElementById("dniFormClient");
