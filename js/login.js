@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const existente = obtenerUsuarioGuardado();
   if (existente && usernameInput && !usernameInput.value) {
-    usernameInput.placeholder = `Ej: ${existente.username}`;
+    usernameInput.placeholder = "Ej: User";
   }
 });
 
