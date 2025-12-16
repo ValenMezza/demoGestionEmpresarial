@@ -140,12 +140,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const existente = obtenerUsuarioGuardado();
   if (existente && usernameInput && !usernameInput.value) {
-    usernameInput.placeholder = `Ej: ${existente.username}`;
+    usernameInput.placeholder = "Ej: Usuario";
   }
 });
 
 
-
+//icono del ojito
 document.querySelectorAll(".password-toggle").forEach(icon => {
     icon.addEventListener("click", () => {
         const inputId = icon.dataset.target;
